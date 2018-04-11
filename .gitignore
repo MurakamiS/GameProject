@@ -1,0 +1,9 @@
+/Game/Resource
+/Game/Debug
+/tkEngine/bulletPhysics/src/BulletCollision/BulletCollision.dir
+/tkEngine/bulletPhysics/src/BulletDynamics/BulletDynamics.dir
+/tkEngine/bulletPhysics/src/LinearMath/LinearMath.dir
+/tkEngine/DebugObjects
+/tkEngine/EffekseerRuntime130/src/lib
+/tkEngine/EffekseerRuntime130/src/Effekseer/Debug
+/tkEngine/EffekseerRuntime130/src/EffekseerRendererDX11/Debug
