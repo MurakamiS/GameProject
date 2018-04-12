@@ -1,8 +1,13 @@
 #pragma once
-class Enshutsu
+class Enshutsu : public IGameObject
 {
 public:
 	Enshutsu();
 	~Enshutsu();
+	bool Start();
+	void Update()
+	{
+
+	}
 };
 

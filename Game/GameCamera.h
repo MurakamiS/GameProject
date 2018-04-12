@@ -1,8 +1,10 @@
 #pragma once
-class GameCamera
+class GameCamera : public IGameObject
 {
 public:
 	GameCamera();
 	~GameCamera();
+	bool Start();
+	void Update();
 };
 

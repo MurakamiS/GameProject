@@ -2,6 +2,7 @@
 #include "Title.h"
 #include "Fade.h"
 #include "Game.h"
+#include "GameCamera.h"
 
 
 Title::Title()
@@ -34,6 +35,7 @@ void Title::Update()
 		if (Pad(0).IsTrigger(enButtonB)) {
 			m_WaitFadeOut = true;
 			m_fade->StartFadeOut();
+			NewGO<GameCamera>(0, "gamecamera");
 		}
 	}
 }

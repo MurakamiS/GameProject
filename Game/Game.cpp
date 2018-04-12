@@ -23,11 +23,11 @@ bool Game::Start()
 	m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	//カメラを設定。後で消す
-	MainCamera().SetTarget({ -375.0f, 0.0f, 400.0f });
-	MainCamera().SetNear(0.1f);
-	MainCamera().SetFar(5000.0f);
-	MainCamera().SetPosition({ -375.0f, 1000.0f, 600.0f });
-	MainCamera().Update();
+	//MainCamera().SetTarget({ -375.0f, 0.0f, 400.0f });
+	//MainCamera().SetNear(0.1f);
+	//MainCamera().SetFar(5000.0f);
+	//MainCamera().SetPosition({ -375.0f, 1000.0f, 600.0f });
+	//MainCamera().Update();
 
 //ゲームプレイに必要なクラスのインスタンスを生成。
 	NewGO<Board>(0, "board");
