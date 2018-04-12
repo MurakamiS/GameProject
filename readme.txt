@@ -7,3 +7,5 @@ GameCamera ゲームカメラ まだGameのほうにカメラのプログラムがあるので移動させる
 これから作成する必要のあるクラス
 Player       Gameクラスにある操作をこちらに持ってくる
 Enshutsu      演出はここ クラス名effectにできなかった
+RedmineのURL
+http://153.126.212.143/redmine
