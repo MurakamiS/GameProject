@@ -18,11 +18,11 @@ bool Stone::Start()
 	switch (m_game->turn)
 	{
 	case -1:
-		m_skinModelData.Load(L"modelData/bluekari.cmo");
+		m_skinModelData.Load(L"modelData/whitekari.cmo");
 		m_game->turn = 1;
 		break;
 	case 1:
-		m_skinModelData.Load(L"modelData/whitekari.cmo");
+		m_skinModelData.Load(L"modelData/bluekari.cmo");
 		m_game->turn = -1;
 		break;
 	default:

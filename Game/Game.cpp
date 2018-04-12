@@ -80,8 +80,8 @@ void Game::Update()
 		}
 	}
 
-	m_skinModelRender->SetPosition({ cursorX*-100.0f,50.0f,cursorY*100.0f });
-	m_position = { cursorX*-100.0f,50.0f,cursorY*100.0f };
+	m_skinModelRender->SetPosition({ cursorX*-110.0f,50.0f,cursorY*110.0f });
+	m_position = { cursorX*-110.0f,50.0f,cursorY*110.0f };
 	if (m_DeleteFlag && !m_fade->IsFade())
 	{
 

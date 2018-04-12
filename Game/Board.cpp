@@ -23,7 +23,7 @@ bool Board::Start()
 			m_skinModelRender[i][j] = NewGO<prefab::CSkinModelRender>(0);
 			m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
 			m_skinModelRender[i][j]->SetScale({ 1.0f, 1.0f, 1.0f });
-			m_skinModelRender[i][j]->SetPosition({ -100.0f*i,0.0f, 100.0f*j });
+			m_skinModelRender[i][j]->SetPosition({ -110.0f*i,0.0f, 110.0f*j });
 		}
 	}
 	//”Õ–Ê”z—ñ‚Ì‰Šú‰»B
