@@ -6,5 +6,6 @@ public:
 	~GameCamera();
 	bool Start();
 	void Update();
+
 };
 
