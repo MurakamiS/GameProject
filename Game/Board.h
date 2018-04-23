@@ -18,9 +18,9 @@ public:
 	int Koushin = 1;//この変数が0の場合得点が更新される
 	int Haichi = 0;//新しい石を配置して配列の更新が必要な時1になる
 private:
-	//残りターン数。
-	int turnA = 10;
-	int turnB = 10;
+	//残りターン数。残コマ数表示の時はこれ使う。
+	int turnA = 10;	//青
+	int turnB = 10;	//白
 	////現在のターン　1が青、-1が白
 	//int turn = 1;
 	Game* m_game = nullptr;

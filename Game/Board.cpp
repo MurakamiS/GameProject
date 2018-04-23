@@ -66,6 +66,7 @@ void Board::Update()
 			if (b < 7)SetMapW(a, b + 1);
 			if (a > 0)SetMapW(a - 1, b);
 			if (a < 7)SetMapW(a + 1, b);
+			turnB--;
 			}
 			break;
 		default:break;

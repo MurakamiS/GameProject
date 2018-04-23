@@ -88,7 +88,21 @@ void Game::Update()
 		NewGO<Title>(0, nullptr);
 		DeleteGO(this);
 	}
-
+	/*if (m_board->turnA==0&&m_board->turnB==0)//お互いがターン使い切った時の処理。数値がおかしくなったら条件の中身を変数にする
+	{
+	if(m_board->ScoreA>m_board->ScoreB)
+	{
+	win=1;
+	}
+	else if(m_board->ScoreA<m_board->ScoreB)
+	{
+	win=-1;
+	}
+	else if(m_board->ScoreA==m_board->ScoreB)
+	{
+	win=0;
+	}
+	*/
 }
 void Game::Render(CRenderContext& rc)
 {
