@@ -9,3 +9,5 @@ Player       Gameクラスにある操作をこちらに持ってくる
 Enshutsu      演出はここ クラス名effectにできなかった
 RedmineのURL
 http://153.126.212.143/redmine/
+小清水からの更新
+yamagami
