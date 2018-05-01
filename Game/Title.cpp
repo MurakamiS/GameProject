@@ -3,6 +3,7 @@
 #include "Fade.h"
 #include "Game.h"
 #include "GameCamera.h"
+#include "Player.h"
 
 
 Title::Title()
@@ -27,6 +28,7 @@ void Title::Update()
 	if (m_WaitFadeOut) {
 		if (!m_fade->IsFade()) {
 			NewGO<Game>(0, "Game");
+			NewGO<Player>(0, "Player");
 			DeleteGO(this);
 		}
 	}

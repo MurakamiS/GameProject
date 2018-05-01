@@ -40,6 +40,7 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="GameCamera.cpp" />
     <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -53,6 +54,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="GameCamera.h" />
     <ClInclude Include="Stone.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">

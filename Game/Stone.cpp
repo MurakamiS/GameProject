@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Stone.h"
 #include "Game.h"
+#include"Player.h"
 
 
 Stone::Stone()
@@ -14,16 +15,15 @@ Stone::~Stone()
 bool Stone::Start()
 {
 	m_game = FindGO<Game>("Game");
-	m_position = m_game->m_position;
-	switch (m_game->turn)
+	m_player = FindGO<Player>("Player");
+	m_position = m_player->m_position;
+	switch (m_player->turn)
 	{
-	case -1:
-		m_skinModelData.Load(L"modelData/whitekari.cmo");
-		m_game->turn = 1;
-		break;
 	case 1:
+		m_skinModelData.Load(L"modelData/whitekari.cmo");
+		break;
+	case -1:
 		m_skinModelData.Load(L"modelData/bluekari.cmo");
-		m_game->turn = -1;
 		break;
 	default:
 		break;
