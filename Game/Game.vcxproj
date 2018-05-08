@@ -620,6 +620,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Enshutsu.cpp" />
     <ClCompile Include="Fade.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameCamera.cpp" />
@@ -635,14 +636,17 @@
     </ClCompile>
     <ClCompile Include="Stone.cpp" />
     <ClCompile Include="Title.cpp" />
+    <ClCompile Include="TurnSprite.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Enshutsu.h" />
     <ClInclude Include="Fade.h" />
     <ClInclude Include="GameCamera.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Stone.h" />
     <ClInclude Include="Title.h" />
+    <ClInclude Include="TurnSprite.h" />
     <CustomBuild Include="Assets\shader\LightingFunction.h" />
     <CustomBuild Include="Assets\shader\modelCB.h" />
     <CustomBuild Include="Assets\shader\modelSRV.h" />
@@ -707,6 +711,8 @@
   <ItemGroup>
     <CustomBuild Include="Assets\effect\test.efk">
       <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
@@ -743,12 +749,20 @@
     <ImageContentTask Include="Assets\sprite\texkarinaka.png" />
   </ItemGroup>
   <ItemGroup>
+    <ImageContentTask Include="Assets\sprite\1Pturn.png" />
+    <Image Include="Assets\sprite\2Pturn.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Resource\effect\test.efk">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

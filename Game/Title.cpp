@@ -30,15 +30,16 @@ void Title::Update()
 			DeleteGO(this);
 		}
 	}
-	//
-	else {
-		if (Pad(0).IsTrigger(enButtonB)) {
-			m_WaitFadeOut = true;
-			m_fade->StartFadeOut();
-			NewGO<GameCamera>(0, "gamecamera");
+		//
+		else {
+			if (Pad(0).IsTrigger(enButtonB)) {
+				m_WaitFadeOut = true;
+				m_fade->StartFadeOut();
+				NewGO<GameCamera>(0, "gamecamera");
+			}
 		}
 	}
-}
+
 void Title::PostRender(CRenderContext& rc)
 {
 	m_sprite.Draw(rc, MainCamera2D().GetViewMatrix(), MainCamera2D().GetProjectionMatrix());

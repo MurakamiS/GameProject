@@ -3,6 +3,8 @@
 #include "tkEngine/graphics/effect/tkEffect.h"
 #include "Title.h"
 #include "Board.h"
+#include "TurnSprite.h"
+//#include "Enshutsu.h"
 class Board;
 class Stone;
 class Game : public IGameObject
@@ -15,6 +17,7 @@ public:
 	void Render(CRenderContext& rc);
 	void OnDestroy();
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;	//スキンモデルレンダラー。 カーソル
+	//prefab::CEffect* m_effect = nullptr;					//エフェクト
 	CAnimationClip m_animClip[1];							//アニメーションクリップ。
 	CAnimation m_animation;
 	CVector3 m_pos = CVector3::Zero;
@@ -25,11 +28,14 @@ public:
  	int turnW = 10; //残りのターン数
 	int turn = 1;	//どちらのターンか　1が青-1が白
 	int win; //どちらが勝ったかを判定　1が青の勝ち　-1が白の勝ち 0が引き分け
+	
 	CVector3 m_position = CVector3::Zero;
+	
 private:
 	Fade * m_fade = nullptr;
 	Board* m_board = nullptr;
 	Stone* m_stone = nullptr;
+
 	enum EnState
 	{
 		enState_FadeIn,		//フェードイン中

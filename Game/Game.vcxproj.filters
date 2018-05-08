@@ -40,6 +40,8 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="GameCamera.cpp" />
     <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="TurnSprite.cpp" />
+    <ClCompile Include="Enshutsu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -53,6 +55,8 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="GameCamera.h" />
     <ClInclude Include="Stone.h" />
+    <ClInclude Include="TurnSprite.h" />
+    <ClInclude Include="Enshutsu.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -178,6 +182,7 @@
     <CustomBuild Include="Assets\effect\Texture\wind02.png">
       <Filter>Assets\effect\Texture</Filter>
     </CustomBuild>
+    <CustomBuild Include="Resource\effect\test.efk" />
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -186,11 +191,13 @@
     <ImageContentTask Include="Assets\sprite\texkari.png" />
     <ImageContentTask Include="Assets\sprite\texkari2.png" />
     <ImageContentTask Include="Assets\sprite\texkari3.png" />
+    <ImageContentTask Include="Assets\sprite\1Pturn.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+    <Image Include="Assets\sprite\2Pturn.png" />
   </ItemGroup>
 </Project>

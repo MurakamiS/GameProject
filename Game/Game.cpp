@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Stone.h"
-
+#include "TurnSprite.h"
+#include "Enshutsu.h"
 
 Game::Game()
 {
@@ -22,6 +23,9 @@ bool Game::Start()
 	m_skinModelRender->Init(L"modelData/bluekari.cmo");
 	m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
+	
+
+
 	//カメラを設定。後で消す
 	//MainCamera().SetTarget({ -375.0f, 0.0f, 400.0f });
 	//MainCamera().SetNear(0.1f);
@@ -29,9 +33,12 @@ bool Game::Start()
 	//MainCamera().SetPosition({ -375.0f, 1000.0f, 600.0f });
 	//MainCamera().Update();
 
+	
+
 //ゲームプレイに必要なクラスのインスタンスを生成。
 	NewGO<Board>(0, "board");
 	m_board = FindGO<Board>("board");
+	
 	//フェードインの処理。
 	m_fade = FindGO<Fade>("fade");
 	m_fade->StartFadeIn();
@@ -39,6 +46,8 @@ bool Game::Start()
 }
 void Game::Update()
 {
+	
+	
 	//操作
 	if (Flag == 1) {
 		if (Pad(0).IsTrigger(enButtonRight))
@@ -82,12 +91,21 @@ void Game::Update()
 
 	m_skinModelRender->SetPosition({ cursorX*-110.0f,50.0f,cursorY*110.0f });
 	m_position = { cursorX*-110.0f,50.0f,cursorY*110.0f };
+	
+	
+
+	
+	
 	if (m_DeleteFlag && !m_fade->IsFade())
 	{
-
 		NewGO<Title>(0, nullptr);
 		DeleteGO(this);
 	}
+
+
+		
+	//}
+	//
 	/*if (m_board->turnA==0&&m_board->turnB==0)//お互いがターン使い切った時の処理。数値がおかしくなったら条件の中身を変数にする
 	{
 	if(m_board->ScoreA>m_board->ScoreB)
