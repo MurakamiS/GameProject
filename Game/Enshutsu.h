@@ -1,13 +1,14 @@
 #pragma once
+#include "tkEngine/graphics/effect/tkEffect.h"
+class Game;
 class Enshutsu : public IGameObject
 {
 public:
-	Enshutsu();
-	~Enshutsu();
-	bool Start();
-	void Update()
-	{
-
-	}
+	bool Start() override;
+	void Update() override;
+	
+private:
+	Game * m_game = nullptr;
+	//CVector3 m_position = CVector3::Zero;
 };
 
