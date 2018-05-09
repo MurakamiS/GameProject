@@ -16,14 +16,9 @@ public:
 	void Update();
 	void Render(CRenderContext& rc);
 	void OnDestroy();
-	prefab::CSkinModelRender* m_skinModelRender = nullptr;	//スキンモデルレンダラー。 カーソル
 	//prefab::CEffect* m_effect = nullptr;					//エフェクト
-	CAnimationClip m_animClip[1];							//アニメーションクリップ。
-	CAnimation m_animation;
-	CVector3 m_pos = CVector3::Zero;
-	int cursorX = 0;
-	int	cursorY = 0;
-	int Flag = 1;//操作可能かどうかのフラグ。0の時はBoardの更新処理中
+
+	prefab::CSkinModelRender* m_skinModelRender = nullptr;	//スキンモデルレンダラー。 
 	int TurnB = 10; 
  	int turnW = 10; //残りのターン数
 	int turn = 1;	//どちらのターンか　1が青-1が白

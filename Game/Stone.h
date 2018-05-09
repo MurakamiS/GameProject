@@ -1,5 +1,7 @@
 #pragma once
 class Game;
+class Stone;
+class Player;
 class Stone : public IGameObject
 {
 public:
@@ -14,5 +16,6 @@ public:
 	CSkinModel m_skinModel;			//スキンモデル。
 private:
 	Game* m_game=nullptr;
+	Player* m_player = nullptr;
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 class Game;
+class Player;
 class Board:public IGameObject
 {
 public:
@@ -24,6 +25,7 @@ private:
 	////現在のターン　1が青、-1が白
 	//int turn = 1;
 	Game* m_game = nullptr;
+	Player* m_player = nullptr;
 	void SetMapB(int a, int b)
 	{
 		switch (Banmen[a][b])
