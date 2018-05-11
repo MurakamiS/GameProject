@@ -6,7 +6,8 @@ Fade フェードインとフェードアウトの演出を出したいときに使う
 GameCamera ゲームカメラ まだGameのほうにカメラのプログラムがあるので移動させる
 これから作成する必要のあるクラス
 Player       Gameクラスにある操作をこちらに持ってくる
-Enshutsu      演出はここ クラス名effectにできなかった
+Enshutsu      エフェクトはここ クラス名effectにできなかった
+Animation	あにめ
 RedmineのURL
 http://153.126.212.143/redmine/
 小清水からの更新
