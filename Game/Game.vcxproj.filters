@@ -40,6 +40,7 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="GameCamera.cpp" />
     <ClCompile Include="Stone.cpp" />
+    <ClCompile Include="Background.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -53,6 +54,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="GameCamera.h" />
     <ClInclude Include="Stone.h" />
+    <ClInclude Include="Background.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -68,6 +70,7 @@
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
+    <MeshContentTask Include="Assets\modelData\background.FBX" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">

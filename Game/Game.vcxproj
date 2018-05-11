@@ -619,6 +619,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Background.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Fade.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -637,6 +638,7 @@
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Background.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Fade.h" />
     <ClInclude Include="GameCamera.h" />
@@ -654,6 +656,7 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="Assets\modelData\background.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankari.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankarinaka.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
