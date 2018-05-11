@@ -4,7 +4,9 @@
 #include "Title.h"
 #include "Board.h"
 #include "TurnSprite.h"
-//#include "Enshutsu.h"
+#include "Enshutsu.h"
+
+
 class Board;
 class Stone;
 class Game : public IGameObject
@@ -30,7 +32,8 @@ private:
 	Fade * m_fade = nullptr;
 	Board* m_board = nullptr;
 	Stone* m_stone = nullptr;
-
+	TurnSprite* m_turnsp = nullptr;
+	Enshutsu* m_enshutsu = nullptr;
 	enum EnState
 	{
 		enState_FadeIn,		//フェードイン中
