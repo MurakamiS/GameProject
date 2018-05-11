@@ -3,6 +3,7 @@
 #include "Stone.h"
 #include "Board.h"
 #include"Game.h"
+#include "Enshutsu.h"
 
 Player::Player()
 {
@@ -20,6 +21,7 @@ bool Player::Start()
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	m_board = FindGO<Board>("board");
 	m_game = FindGO<Game>("Game");
+	//m_enshutsu = FindGO<Enshutsu>("enshutsu");
 	return true;
 }
 void Player::Update()
@@ -53,6 +55,7 @@ void Player::Update()
 				SousaFlag = 0;//‘€ì‚ð•s‰Â”\‚É‚·‚é
 				m_board->Banmen[cursorX][cursorY] = 2;
 				NewGO<Stone>(0, nullptr);
+				NewGO<Enshutsu>(0, "enshutsu");
 				m_board->Haichi = 1;
 			}
 		}
@@ -85,6 +88,7 @@ void Player::Update()
 
 				m_board->Banmen[cursorX][cursorY] = -2;
 				NewGO<Stone>(0, nullptr);
+				NewGO<Enshutsu>(0, "enshutsu");
 				SousaFlag = 0;
 				m_board->Haichi = 1;
 			}

@@ -1,5 +1,6 @@
 #pragma once
 #include "tkEngine/graphics/effect/tkEffect.h"
+#include "Player.h"
 class Game;
 class Enshutsu : public IGameObject
 {
@@ -8,7 +9,8 @@ public:
 	void Update() override;
 	
 private:
-	Game * m_game = nullptr;
+	Player * m_player = nullptr;
+	
 	//CVector3 m_position = CVector3::Zero;
 };
 

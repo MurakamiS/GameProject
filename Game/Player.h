@@ -15,6 +15,7 @@ public:
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
 	Board* m_board = nullptr;
 	Game* m_game = nullptr;
+	//Enshutsu* m_enshutsu = nullptr;
 	CVector3 m_position = CVector3::Zero;
 };
 
