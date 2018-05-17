@@ -31,6 +31,7 @@ private:
 		switch (Banmen[a][b])
 		{
 		case -1:Banmen[a][b] = 0;
+			//‚±‚±‚É‚¦‚ñ‚µ‚ã‚Â‚Ì‚â‚Â
 			break;
 		case 0:Banmen[a][b] = 1;
 			break;
@@ -43,6 +44,7 @@ private:
 		switch (Banmen[a][b])
 		{
 		case 1:Banmen[a][b] = 0;
+			//‚±‚±‚É‚¦‚ñ‚µ‚ã‚Â‚Ì‚â‚Â
 			break;
 		case 0:Banmen[a][b] = -1;
 			break;

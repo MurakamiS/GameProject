@@ -25,6 +25,8 @@ public:
 		return m_currentAlpha;
 	}
 	//メンバ変数
+
+	
 private:
 	enum Enstate
 	{
@@ -32,9 +34,12 @@ private:
 		enState_FadeOut,	//フェードアウト中
 		enState_Idle,		//どっちでもない
 	};
+	Enstate m_state = enState_Idle;	//現在のフェードの状態。
+
+
 	CShaderResourceView m_texture;
 	CSprite m_sprite;
-	Enstate m_state = enState_Idle;	//現在のフェードの状態。
+	int time = 0;
 	float m_currentAlpha = 1.0f;
 };
 

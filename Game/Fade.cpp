@@ -12,12 +12,15 @@ Fade::~Fade()
 }
 bool Fade::Start()
 {
-	m_texture.CreateFromDDSTextureFromFile(L"sprite/fade.dds");
-	m_sprite.Init(m_texture, 1280, 720);
+
+		m_texture.CreateFromDDSTextureFromFile(L"sprite/fade.dds");
+		m_sprite.Init(m_texture, 1280, 720);
+	
 	return true;
 }
 void Fade::Update()
 {
+
 	switch (m_state) {
 	case enState_FadeIn:
 		m_currentAlpha -= 2.0f * GameTime().GetFrameDeltaTime();
