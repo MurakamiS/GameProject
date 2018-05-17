@@ -24,7 +24,7 @@ void TurnSprite::Update()
 {
 	time++;
 	if (m_player->SousaFlag == 1 && m_player->turn == 1) {
-		
+
 		m_texture1.CreateFromDDSTextureFromFile(L"sprite/1Pturn.dds");
 		m_sprite1.Init(m_texture1, 1280, 720);
 		if (time >= 30) {
@@ -37,7 +37,7 @@ void TurnSprite::Update()
 			}
 		}
 	}
-
+	
 	if (m_player->SousaFlag == 1 && m_player->turn == -1) {
 
 		m_texture2.CreateFromDDSTextureFromFile(L"sprite/2Pturn.dds");
@@ -64,5 +64,5 @@ void TurnSprite::PostRender(CRenderContext& rc)
 	if (m_player->SousaFlag == 1 && m_player->turn == -1) {
 		m_sprite2.SetMulColor({ 1.0f, 1.0f, 1.0f, m_currentAlpha2 });
 		m_sprite2.Draw(rc, MainCamera2D().GetViewMatrix(), MainCamera2D().GetProjectionMatrix());
-	}////
+	}
 }
