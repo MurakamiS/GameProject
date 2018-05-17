@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Board.h"
 #include "Game.h"
+#include "Player.h"
 
 
 Board::Board()
@@ -33,6 +34,7 @@ bool Board::Start()
 		}
 	}
 	 m_game = FindGO<Game>("Game");
+	 m_player = FindGO<Player>("Player");
 	return true;
 }
 void Board::Update()
@@ -40,15 +42,11 @@ void Board::Update()
 	//
 
 	//
-	if (Pad(0).IsTrigger(enButtonX))
-	{
-		m_skinModelRender[1][0]->Init(L"modelData/Bankari.cmo");
-	}
 	//置いた石の周りの色を更新///////////////////////////////////////////つぎここからやれ
 	if (Haichi == 1)
 	{
-		int a = m_game->cursorX;
-		int b = m_game->cursorY;
+		int a = m_player->cursorX;
+		int b = m_player->cursorY;
 		switch (Banmen[a][b])
 		{
 		case 2:
@@ -105,7 +103,15 @@ void Board::Update()
 			}
 		}
 		Koushin = 0;
-		m_game->Flag = 1;
+		m_player->SousaFlag = 1;
+		if (m_player->turn == 1)
+		{
+			m_player->turn = -1;
+		}
+		else if (m_player->turn == -1)
+		{
+			m_player->turn = 1;
+		}
 	}
 }
 void Board::Render(CRenderContext& rc)

@@ -3,6 +3,7 @@
 #include "Fade.h"
 #include "Game.h"
 #include "GameCamera.h"
+#include "Player.h"
 
 
 Title::Title()
@@ -27,18 +28,20 @@ void Title::Update()
 	if (m_WaitFadeOut) {
 		if (!m_fade->IsFade()) {
 			NewGO<Game>(0, "Game");
+			NewGO<Player>(0, "Player");
 			DeleteGO(this);
 		}
 	}
-	//
-	else {
-		if (Pad(0).IsTrigger(enButtonB)) {
-			m_WaitFadeOut = true;
-			m_fade->StartFadeOut();
-			NewGO<GameCamera>(0, "gamecamera");
+		//
+		else {
+			if (Pad(0).IsTrigger(enButtonB)) {
+				m_WaitFadeOut = true;
+				m_fade->StartFadeOut();
+				NewGO<GameCamera>(0, "gamecamera");
+			}
 		}
 	}
-}
+
 void Title::PostRender(CRenderContext& rc)
 {
 	m_sprite.Draw(rc, MainCamera2D().GetViewMatrix(), MainCamera2D().GetProjectionMatrix());
