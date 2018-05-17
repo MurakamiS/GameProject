@@ -7,6 +7,8 @@
 class Background : public IGameObject
 
 {
+	Background();
+	~Background();
 	bool Start();
 	void Update();
 	void Render(CRenderContext& rc);

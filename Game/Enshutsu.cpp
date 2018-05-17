@@ -17,7 +17,7 @@ void Enshutsu :: Update()
 	//if (Pad(0).IsTrigger(enButtonSelect)) {
 		//エフェクトを作成。
 	count++;
-	if
+	//if
 		prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
 		//エフェクトを再生。
 		effect->Play(L"effect/test.efk");
