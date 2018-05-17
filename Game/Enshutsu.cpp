@@ -20,7 +20,8 @@ void Enshutsu :: Update()
 		prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
 		//エフェクトを再生。
 		effect->Play(L"effect/test.efk");
-		m_player = FindGO<Player>("Player");
+		//effect->SetScale()
+		//m_player = FindGO<Player>("Player");
 		CVector3 emitPos = m_player->m_position;
 		effect->SetPosition(emitPos);
 		DeleteGO(this);
