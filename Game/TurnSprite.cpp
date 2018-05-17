@@ -64,5 +64,5 @@ void TurnSprite::PostRender(CRenderContext& rc)
 	if (m_player->SousaFlag == 1 && m_player->turn == -1) {
 		m_sprite2.SetMulColor({ 1.0f, 1.0f, 1.0f, m_currentAlpha2 });
 		m_sprite2.Draw(rc, MainCamera2D().GetViewMatrix(), MainCamera2D().GetProjectionMatrix());
-	}
+	}//
 }
