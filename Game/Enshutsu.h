@@ -10,6 +10,7 @@ public:
 	
 private:
 	Player * m_player = nullptr;
-	//CVector3 scale = { 2.0f, 2.0f, 2.0f };
+	CVector3 scale = { 5.0f, 5.0f, 5.0f };
+	int count = 1;
 };
 
