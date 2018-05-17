@@ -4,6 +4,7 @@
 #include "Board.h"
 #include"Game.h"
 #include "Enshutsu.h"
+#include "TurnSprite.h"
 
 Player::Player()
 {
@@ -21,13 +22,19 @@ bool Player::Start()
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	m_board = FindGO<Board>("board");
 	m_game = FindGO<Game>("Game");
-	//m_enshutsu = FindGO<Enshutsu>("enshutsu");
+	m_turnsp=NewGO<TurnSprite>(0, "turnsp");
+	
 	return true;
 }
 void Player::Update()
 {
 	//模索中
+	
+
+	//NewGO<TurnSprite>(0, "turnsp");
+	
 	if (SousaFlag == 1&&turn==1) {
+		//time++;
 		if (Pad(0).IsTrigger(enButtonRight))
 		{
 			cursorX++;
@@ -48,6 +55,7 @@ void Player::Update()
 			cursorY--;
 			if (cursorY < 0)cursorY = 0;
 		}
+		
 		//石を配置して盤面の更新を行う 同じマスに複数おけるのを修正予定 置けない時は置けないというのをだす？
 		if (Pad(0).IsTrigger(enButtonStart))
 		{
@@ -60,7 +68,10 @@ void Player::Update()
 			}
 		}
 	}
+	
+	
 	if (SousaFlag == 1 && turn == -1) {
+		//time++;
 		if (Pad(1).IsTrigger(enButtonRight))
 		{
 			cursorX++;
@@ -81,6 +92,7 @@ void Player::Update()
 			cursorY--;
 			if (cursorY < 0)cursorY = 0;
 		}
+		
 		//石を配置して盤面の更新を行う 同じマスに複数おけるのを修正予定 置けない時は置けないというのをだす？
 		if (Pad(1).IsTrigger(enButtonStart))
 		{
@@ -94,6 +106,7 @@ void Player::Update()
 			}
 		}
 	}
+	
 	m_skinModelRender->SetPosition({ cursorX*-110.0f,50.0f,cursorY*110.0f });
 	m_position = { cursorX*-110.0f,50.0f,cursorY*110.0f };
 }

@@ -116,7 +116,7 @@ void Board::Update()
 }
 void Board::Render(CRenderContext& rc)
 {
-	//m_font.Begin(rc);
-	//m_font.Draw(turnA, { 0.0f, -270.0f }, { 234.0f / 255.0f, 69.0f / 255.0f, 21.0f / 255.0f, 1.0f }, 0.0f, 1.0f, {0.0f,1.0f});
-	//m_font.End(rc);
+	/*m_font.Begin(rc);
+	m_font.Draw(turnA, { 0.0f, -270.0f }, { 234.0f / 255.0f, 69.0f / 255.0f, 21.0f / 255.0f, 1.0f }, 0.0f, 1.0f, {0.0f,1.0f});
+	m_font.End(rc);*/
 }
