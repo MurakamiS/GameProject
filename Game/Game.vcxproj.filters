@@ -78,6 +78,7 @@
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
+    <MeshContentTask Include="Assets\modelData\background.FBX" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">

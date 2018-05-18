@@ -664,6 +664,7 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <MeshContentTask Include="Assets\modelData\background.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankari.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankarinaka.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />

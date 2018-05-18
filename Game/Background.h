@@ -7,6 +7,7 @@
 class Background : public IGameObject
 
 {
+public:
 	Background();
 	~Background();
 	bool Start();
