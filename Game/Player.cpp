@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Stone.h"
 #include "Board.h"
-#include"Game.h"
+#include "Game.h"
 #include "Enshutsu.h"
 #include "TurnSprite.h"
 

@@ -35,7 +35,7 @@ bool Game::Start()
 	//フェードインの処理。
 	m_fade = FindGO<Fade>("fade");
 	m_fade->StartFadeIn();
-	m_enshutsu = NewGO<Enshutsu>(0, "enshutsu");
+	
 	return true;
 }
 void Game::Update()
