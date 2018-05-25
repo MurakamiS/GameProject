@@ -47,7 +47,7 @@ namespace tkEngine{
 			}
 		}
 		
-	private:
+	public:
 		std::list<float> m_frameDeltaTimeQue;
 		float		m_frameDeltaTime = 1.0f / 60.0f;		//1フレームの経過時間。
 	};
