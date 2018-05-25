@@ -26,6 +26,11 @@ bool Game::Start()
 	//m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
 	//m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 
+	//タイマー用のフォントを初期化。
+	//m_timerFont = std::make_unique<DirectX::SpriteFont>(
+	//	GraphicsEngine().GetD3DDevice(),
+	//	L"font/hato_pop.spritefont"
+	//	);
 
 	
 
@@ -65,7 +70,26 @@ void Game::Update()
 	}
 	*/
 
+	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime());
 }
 void Game::Render(CRenderContext& rc)
 {
+}
+void Game::PostRender(CRenderContext& rc)
+{
+	wchar_t text[256];
+	int sec = (int)m_timer;
+	swprintf_s(text, L"%02d", sec);
+	m_fontTest.Begin(rc);
+
+	//文字を描画。
+	m_fontTest.Draw(
+		text,
+		{ -300.0f, 300.0f },
+		{ 1.0f, 0.0f, 0.0f, 1.0f },//RGB
+		0.0f,
+		3.0f,
+		{ 0.0f, 1.0f }
+	);
+	m_fontTest.End(rc);
 }

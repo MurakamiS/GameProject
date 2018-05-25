@@ -31,8 +31,8 @@ void Player::Update()
 	//模索中
 	
 
-	//NewGO<TurnSprite>(0, "turnsp");
 	
+	//タイマースタート？
 	if (SousaFlag == 1&&turn==1) {
 		//time++;
 		if (Pad(0).IsTrigger(enButtonRight))
