@@ -79,6 +79,8 @@
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
     <MeshContentTask Include="Assets\modelData\background.FBX" />
+    <MeshContentTask Include="Assets\modelData\blueman.FBX" />
+    <MeshContentTask Include="Assets\modelData\whiteman.FBX" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">
@@ -189,7 +191,9 @@
     <CustomBuild Include="Assets\effect\Texture\wind02.png">
       <Filter>Assets\effect\Texture</Filter>
     </CustomBuild>
-    <CustomBuild Include="Resource\effect\test.efk" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Resource\effect\test.efk" />
+    <CustomBuild Include="Assets\modelData\whiteman.tks" />
+    <CustomBuild Include="Assets\modelData\blueman.tks" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />

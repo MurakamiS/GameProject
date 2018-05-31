@@ -669,8 +669,10 @@
     <MeshContentTask Include="Assets\modelData\Bankarinaka.FBX" />
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
+    <MeshContentTask Include="Assets\modelData\blueman.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
+    <MeshContentTask Include="Assets\modelData\whiteman.FBX" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\modelData\unityChan.tks">
@@ -772,6 +774,14 @@
     <CustomBuild Include="Resource\effect\test.efk">
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\modelData\blueman.tks">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\modelData\whiteman.tks">
+      <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -17,7 +17,7 @@ Player::~Player()
 bool Player::Start()
 {
 	m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	m_skinModelRender->Init(L"modelData/bluekari.cmo");
+	m_skinModelRender->Init(L"modelData/whitekari.cmo");
 	m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	m_board = FindGO<Board>("board");
