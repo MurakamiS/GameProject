@@ -5,6 +5,7 @@
 #include "Board.h"
 #include "TurnSprite.h"
 #include "Enshutsu.h"
+#include "tkEngine/graphics/font/tkFont.h"
 
 
 class Board;
@@ -17,7 +18,12 @@ public:
 	bool Start();
 	void Update();
 	void Render(CRenderContext& rc);
+	void PostRender(CRenderContext& rc);
 	void OnDestroy();
+	void ResetTimer()
+	{
+		m_timer = 30.0f;
+	}
 	//prefab::CEffect* m_effect = nullptr;					//エフェクト
 
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;	//スキンモデルレンダラー。 
@@ -34,6 +40,9 @@ private:
 	Stone* m_stone = nullptr;
 	TurnSprite* m_turnsp = nullptr;
 	Enshutsu* m_enshutsu = nullptr;
+	CFont m_fontTest;
+	float m_timer = 30.0f;								//!<タイマー
+	//std::unique_ptr<DirectX::SpriteFont> m_timerFont;	//!<タイマー用のフォント。
 	enum EnState
 	{
 		enState_FadeIn,		//フェードイン中

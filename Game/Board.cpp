@@ -112,6 +112,7 @@ void Board::Update()
 		{
 			m_player->turn = 1;
 		}
+		m_game->ResetTimer();	//タイマーリセット
 	}
 }
 void Board::Render(CRenderContext& rc)
