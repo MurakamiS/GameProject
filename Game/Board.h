@@ -1,4 +1,5 @@
 #pragma once
+#include "Animation.h"
 class Game;
 class Player;
 class Board:public IGameObject
@@ -18,6 +19,8 @@ public:
 	wchar_t B;
 	int Koushin = 1;//この変数が0の場合得点が更新される
 	int Haichi = 0;//新しい石を配置して配列の更新が必要な時1になる
+	int BanX;
+	int BanY;
 private:
 	//残りターン数。残コマ数表示の時はこれ使う。
 	int turnA = 10;	//青
@@ -32,6 +35,9 @@ private:
 		{
 		case -1:Banmen[a][b] = 0;
 			//ここにえんしゅつのやつ
+			BanX = a;
+			BanY = b;
+			NewGO<Animation>(0);
 			break;
 		case 0:Banmen[a][b] = 1;
 			break;

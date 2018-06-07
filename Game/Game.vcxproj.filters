@@ -193,7 +193,9 @@
     </CustomBuild>
     <CustomBuild Include="Resource\effect\test.efk" />
     <CustomBuild Include="Assets\modelData\whiteman.tks" />
-    <CustomBuild Include="Assets\modelData\blueman.tks" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\modelData\blueman.tks" />
+    <CustomBuild Include="Assets\animation\solwalk.tka" />
+    <CustomBuild Include="Assets\animation\solrun.tka" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -210,5 +212,9 @@
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\animation\solattack.tka" />
+    <None Include="Assets\animation\solidle.tka" />
   </ItemGroup>
 </Project>

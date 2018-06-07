@@ -784,6 +784,20 @@
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\solattack.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animation\solidle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animation\solrun.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Assets\animation\solwalk.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.targets" />
