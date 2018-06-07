@@ -4,7 +4,7 @@
 #include "TurnSprite.h"
 #include "Enshutsu.h"
 #include "Background.h"
-
+#include "Player.h"
 
 Game::Game()
 {
@@ -42,7 +42,7 @@ bool Game::Start()
 	//フェードインの処理。
 	m_fade = FindGO<Fade>("fade");
 	m_fade->StartFadeIn();
-	
+	m_player=FindGO<Player>("Player");
 	return true;
 }
 void Game::Update()
@@ -70,8 +70,20 @@ void Game::Update()
 	}
 	*/
 
-	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime());
-}
+	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime()); {
+		if (m_timer == 0) {
+			if (m_player->turn == -1) {
+				m_player->turn = 1;
+			}
+			else if (m_player->turn == 1) {
+				m_player->turn = -1;
+			}
+			NewGO<TurnSprite>(0, "turnsp");
+			ResetTimer();
+			}
+		}
+	}
+
 void Game::Render(CRenderContext& rc)
 {
 }

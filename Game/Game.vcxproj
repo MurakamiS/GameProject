@@ -758,11 +758,8 @@
     <ImageContentTask Include="Assets\sprite\texkarinaka.png" />
   </ItemGroup>
   <ItemGroup>
-    <ImageContentTask Include="Assets\sprite\1Pturn.png">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </ExcludedFromBuild>
-    </ImageContentTask>
-    <ImageContentTask Include="Assets\sprite\2Pturn.png" />
+    <CustomBuild Include="Assets\sprite\1Pturn.png" />
+    <CustomBuild Include="Assets\sprite\2Pturn.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
@@ -781,6 +778,21 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\modelData\whiteman.tks">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\blue.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\white.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\koma.wav">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

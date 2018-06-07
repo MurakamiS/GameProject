@@ -14,6 +14,7 @@ public:
 	CFont m_font;
 	int ScoreA = 0;
 	int ScoreB = 0;
+	int k = 0;
 	wchar_t A;
 	wchar_t B;
 	int Koushin = 1;//‚±‚Ì•Ï”‚ª0‚Ìê‡“¾“_‚ªXV‚³‚ê‚é

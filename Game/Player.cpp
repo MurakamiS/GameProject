@@ -63,8 +63,11 @@ void Player::Update()
 				SousaFlag = 0;//‘€ì‚ð•s‰Â”\‚É‚·‚é
 				m_board->Banmen[cursorX][cursorY] = 2;
 				NewGO<Stone>(0, nullptr);
-				NewGO<Enshutsu>(0, "enshutsu");
+			
 				m_board->Haichi = 1;
+				//m_board->Koushin = 1;
+				NewGO<Enshutsu>(0, "enshutsu");
+				//m_board->Koushin = 1;
 			}
 		}
 	}
@@ -100,9 +103,13 @@ void Player::Update()
 
 				m_board->Banmen[cursorX][cursorY] = -2;
 				NewGO<Stone>(0, nullptr);
-				NewGO<Enshutsu>(0, "enshutsu");
+				
 				SousaFlag = 0;
 				m_board->Haichi = 1;
+				//m_board->Koushin = 1;
+				NewGO<Enshutsu>(0, "enshutsu");
+				//m_board->Koushin = 1;
+
 			}
 		}
 	}

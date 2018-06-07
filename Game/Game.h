@@ -10,6 +10,7 @@
 
 class Board;
 class Stone;
+class Player;
 class Game : public IGameObject
 {
 public:
@@ -22,7 +23,7 @@ public:
 	void OnDestroy();
 	void ResetTimer()
 	{
-		m_timer = 30.0f;
+		m_timer = 3.0f;
 	}
 	//prefab::CEffect* m_effect = nullptr;					//エフェクト
 
@@ -38,6 +39,7 @@ private:
 	Fade * m_fade = nullptr;
 	Board* m_board = nullptr;
 	Stone* m_stone = nullptr;
+	Player* m_player = nullptr;
 	TurnSprite* m_turnsp = nullptr;
 	Enshutsu* m_enshutsu = nullptr;
 	CFont m_fontTest;
