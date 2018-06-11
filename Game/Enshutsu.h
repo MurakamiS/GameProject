@@ -13,7 +13,8 @@ public:
 private:
 	Player * m_player = nullptr;
 	Board* m_board = nullptr;
-	CVector3 scale = { 50.0f, 50.0f, 50.0f };
+	
+	CVector3 scale =/* { 10.0f, 10.0f, 10.0f };*/{ 50.0f, 50.0f, 50.0f };
 	int count = 1;
 };
 

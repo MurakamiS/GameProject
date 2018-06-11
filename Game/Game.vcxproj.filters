@@ -198,7 +198,10 @@
     <CustomBuild Include="Assets\effect\white.efk" />
     <CustomBuild Include="Assets\sprite\1Pturn.png" />
     <CustomBuild Include="Assets\sprite\2Pturn.png" />
-    <CustomBuild Include="Assets\sound\koma.wav" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\sound\koma.wav" />
+    <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
+    <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
+    <CustomBuild Include="Assets\effect\Texture\a.png" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
