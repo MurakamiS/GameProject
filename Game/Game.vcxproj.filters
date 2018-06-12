@@ -201,7 +201,9 @@
     <CustomBuild Include="Assets\sound\koma.wav" />
     <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
     <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
-    <CustomBuild Include="Assets\effect\Texture\a.png" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\effect\Texture\a.png" />
+    <CustomBuild Include="Assets\effect\Texture\StanBlade.png" />
+    <CustomBuild Include="Assets\effect\bluezangeki.efk" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
