@@ -20,7 +20,7 @@ bool Enshutsu::Start()
 	
 	if (m_board->Koushin == 0 &&m_player->turn == 1){
 		ss->Play(false);
-		effect->Play(L"effect/a.efk");
+		effect->Play(L"effect/blue.efk");
 	}
 	
 	if (m_board->Koushin == 0 &&m_player->turn == -1) {

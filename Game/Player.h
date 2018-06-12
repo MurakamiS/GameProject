@@ -25,13 +25,13 @@ public:
 
 
 
-	enum EnAnimationClip {
-		enAnimationClip_solrun,	//待機アニメーション。
-		//enAnimationClip_run,	//走りアニメーション。
-		//enAnimationClip_walk,	//歩きアニメーション。
-		enAnimationClip_Num,	//アニメーションクリップの数。
-	};
-	prefab::CSkinModelRender* m_skinModelRender1 = nullptr;
-	CAnimationClip m_animClips[enAnimationClip_Num];	//アニメーションクリップ。
+	//enum EnAnimationClip {
+	//	enAnimationClip_solrun,	//待機アニメーション。
+	//	//enAnimationClip_run,	//走りアニメーション。
+	//	//enAnimationClip_walk,	//歩きアニメーション。
+	//	enAnimationClip_Num,	//アニメーションクリップの数。
+	//};
+	//prefab::CSkinModelRender* m_skinModelRender1 = nullptr;
+	//CAnimationClip m_animClips[enAnimationClip_Num];	//アニメーションクリップ。
 };
 
