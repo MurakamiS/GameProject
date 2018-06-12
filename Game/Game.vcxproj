@@ -762,8 +762,8 @@
     <CustomBuild Include="Assets\sprite\2Pturn.png" />
     <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
     <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
-    <CustomBuild Include="Assets\effect\Texture\a.png" />
     <CustomBuild Include="Assets\effect\Texture\StanBlade.png" />
+    <CustomBuild Include="Assets\effect\Texture\a.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
@@ -802,6 +802,11 @@
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\effect\bluezangeki.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\whitezangeki.efk">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
