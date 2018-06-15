@@ -23,7 +23,7 @@ public:
 	void OnDestroy();
 	void ResetTimer()
 	{
-		m_timer = 3.0f;
+		m_timer = 99.0f;
 	}
 	//prefab::CEffect* m_effect = nullptr;					//エフェクト
 

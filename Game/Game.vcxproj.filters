@@ -202,9 +202,11 @@
     <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
     <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
     <CustomBuild Include="Assets\effect\Texture\StanBlade.png" />
-    <CustomBuild Include="Assets\effect\bluezangeki.efk" />
     <CustomBuild Include="Assets\effect\Texture\a.png" />
-    <CustomBuild Include="Assets\effect\whitezangeki.efk" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\effect\meteo.efk" />
+    <CustomBuild Include="Assets\effect\bluezangeki.efk" />
+    <CustomBuild Include="Assets\effect\kurozan.efk" />
+    <CustomBuild Include="Assets\effect\a.efk" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />

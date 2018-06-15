@@ -4,7 +4,7 @@
 #include "Game.h"
 #include "GameCamera.h"
 #include "Player.h"
-
+#include "Animation.h"
 
 
 Title::Title()
@@ -32,7 +32,7 @@ void Title::Update()
 		if (!m_fade->IsFade()) {
 			NewGO<Game>(0, "Game");
 			NewGO<Player>(0, "Player");
-			
+			NewGO<Animation>(0, "Animation");
 			DeleteGO(this);
 
 		}

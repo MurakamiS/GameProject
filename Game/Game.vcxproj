@@ -801,12 +801,22 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <CustomBuild Include="Assets\effect\meteo.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
     <CustomBuild Include="Assets\effect\bluezangeki.efk">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Assets\effect\whitezangeki.efk">
+    <CustomBuild Include="Assets\effect\kurozan.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\a.efk">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

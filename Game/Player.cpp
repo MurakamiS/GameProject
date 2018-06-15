@@ -26,19 +26,14 @@ bool Player::Start()
 	
 
 
-	//m_skinModelRender1 = NewGO<prefab::CSkinModelRender>(0);
-	//m_skinModelRender1->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
-	//m_animClips[enAnimationClip_solrun].Load(L"animation/solrun.tka");
-	//m_animClips[enAnimationClip_solrun].SetLoopFlag(true);
+
 	return true;
 }
 void Player::Update()
 {
 	//模索中
 	
-	//if (Pad(0).IsTrigger(enButtonA)) {
-	//	m_skinModelRender1->PlayAnimation(enAnimationClip_solrun);
-	//}
+
 
 	//タイマースタート？
 	if (SousaFlag == 1&&turn==1) {

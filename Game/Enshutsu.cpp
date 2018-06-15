@@ -4,45 +4,105 @@
 #include "Stone.h"
 #include "Player.h"
 #include "Board.h"
+
 bool Enshutsu::Start()
 {
+	
+	prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
+	rot.SetRotation(CVector3::AxisZ, 90);
+	m_skinModelData.Load(L"modelData/whitekari.cmo");
 	m_board = FindGO<Board>("board");
 	m_player = FindGO<Player>("Player");
-	prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
-	
 	prefab::CSoundSource* ss;
 	ss = NewGO<prefab::CSoundSource>(0);
-	ss->Init("sound/koma.wav");
+	ss->Init("sound/koma.wav");	
+	ss->Play(false);
+	if (m_board->Koushin == 0 && m_player->turn == 1) {
+		
+		
+		
+		/////////////////////////////////
+		/////////ここから
+		////////////////////////////////
+		// 
+		//  ↓これでできると思った
+		if (m_player->cursorX != 0 || m_player->cursorX != 7 || m_player->cursorY != 0 && m_player->cursorX != 7) {
+			effect->SetScale(scale);
+			CVector3 emitPos1{ 100.0f,10.0f,20.0f };
+			emitPos1 += m_player->m_position;
+			effect->SetPosition(emitPos1);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
 
-	CVector3 emitPos{ 50.0f,0.0f,50.0f };
-	emitPos += m_player->m_position;
-	effect->SetPosition(emitPos);
-	CQuaternion rot{ 0.0f,90.0f,0.0f,1.0f };
-	effect->SetRotation(rot);
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos2{ -100.0f,10.0f,20.0f };
+			emitPos2 += m_player->m_position;
+			effect->SetPosition(emitPos2);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
 
-	//effect->SetScale(scale);
-	
-	if (m_board->Koushin == 0 &&m_player->turn == 1){
-		ss->Play(false);
-		effect->Play(L"effect/whitezangeki.efk");
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos3{ -10.0f,10.0f,100.0f };
+			emitPos3 += m_player->m_position;
+			effect->SetPosition(emitPos3);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos4{ -10.0f,10.0f,-100.0f };
+			emitPos4 += m_player->m_position;
+			effect->SetPosition(emitPos4);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+		}
 	}
+		
 	
-	if (m_board->Koushin == 0 &&m_player->turn == -1) {
-		ss->Play(false);
-		effect->Play(L"effect/whitezangeki.efk");
+
+	if (m_board->Koushin == 0 && m_player->turn == -1) {
+		if (a == 0 || a == 7 || b == 0 || b == 7) {
+			effect->SetScale(scale);
+			CVector3 emitPos1{ 100.0f,10.0f,20.0f };
+			emitPos1 += m_player->m_position;
+			effect->SetPosition(emitPos1);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos2{ -100.0f,10.0f,20.0f };
+			emitPos2 += m_player->m_position;
+			effect->SetPosition(emitPos2);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos3{ -10.0f,10.0f,100.0f };
+			emitPos3 += m_player->m_position;
+			effect->SetPosition(emitPos3);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos4{ -10.0f,10.0f,-100.0f };
+			emitPos4+= m_player->m_position;
+			effect->SetPosition(emitPos4);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+		}
 	}
 	return true;
 }
-
 void Enshutsu :: Update()
 {	
-	//prefab::CEffect* effect;
-	//	if(effect->IsPlay())
 	
-	
-		//エフェクトを再生。
-	
-		
-		
+	DeleteGO(this);
+}
+void Enshutsu::PostRender(CRenderContext& rc) {
 
 }

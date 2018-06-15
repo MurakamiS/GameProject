@@ -24,7 +24,7 @@ bool TurnSprite::Start()
 void TurnSprite::Update()
 {
 	time++;
-	if (/*m_player->SousaFlag == 1*/m_board->Koushin == 0 && m_player->turn == 1) {
+	if (m_board->Koushin == 0 && m_player->turn == 1) {
 		if (time >= 45) {
 			m_currentAlpha1 -= 2.0f * GameTime().GetFrameDeltaTime();
 			if (m_currentAlpha1 <= 0.0f) {
@@ -52,10 +52,7 @@ void TurnSprite::Update()
 			}
 		}
 	}
-		
-	if (/*m_player->SousaFlag == 1*/m_board->Koushin == 0 && m_player->turn == -1) {
-		//time++;
-		
+	if (m_board->Koushin == 0 && m_player->turn == -1){
 		if (time >= 45) {
 			m_currentAlpha2 -= 2.0f * GameTime().GetFrameDeltaTime();
 			if (m_currentAlpha2 <= 0.0f) {
@@ -65,7 +62,7 @@ void TurnSprite::Update()
 				m_currentAlpha1 = 1.0f;
 			}
 		}
-		else if (time < 45) {
+		else if (time < 45){
 			if (Pad(0).IsTrigger(enButtonStart)) {
 			time = 0;
 			time++;
