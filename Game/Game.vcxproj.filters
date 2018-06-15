@@ -194,19 +194,8 @@
     <CustomBuild Include="Resource\effect\test.efk" />
     <CustomBuild Include="Assets\modelData\whiteman.tks" />
     <CustomBuild Include="Assets\modelData\blueman.tks" />
-    <CustomBuild Include="Assets\effect\blue.efk" />
-    <CustomBuild Include="Assets\effect\white.efk" />
-    <CustomBuild Include="Assets\sprite\1Pturn.png" />
-    <CustomBuild Include="Assets\sprite\2Pturn.png" />
-    <CustomBuild Include="Assets\sound\koma.wav" />
-    <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
-    <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
-    <CustomBuild Include="Assets\effect\Texture\StanBlade.png" />
-    <CustomBuild Include="Assets\effect\Texture\a.png" />
-    <CustomBuild Include="Assets\effect\meteo.efk" />
-    <CustomBuild Include="Assets\effect\bluezangeki.efk" />
-    <CustomBuild Include="Assets\effect\kurozan.efk" />
-    <CustomBuild Include="Assets\effect\a.efk" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\animation\solwalk.tka" />
+    <CustomBuild Include="Assets\animation\solrun.tka" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -215,11 +204,17 @@
     <ImageContentTask Include="Assets\sprite\texkari.png" />
     <ImageContentTask Include="Assets\sprite\texkari2.png" />
     <ImageContentTask Include="Assets\sprite\texkari3.png" />
+    <ImageContentTask Include="Assets\sprite\1Pturn.png" />
+    <ImageContentTask Include="Assets\sprite\2Pturn.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\animation\solattack.tka" />
+    <None Include="Assets\animation\solidle.tka" />
   </ItemGroup>
 </Project>

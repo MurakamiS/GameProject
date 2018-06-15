@@ -758,12 +758,11 @@
     <ImageContentTask Include="Assets\sprite\texkarinaka.png" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Assets\sprite\1Pturn.png" />
-    <CustomBuild Include="Assets\sprite\2Pturn.png" />
-    <CustomBuild Include="Assets\effect\Texture\Crystal001.png" />
-    <CustomBuild Include="Assets\effect\Texture\Shock_wave001.png" />
-    <CustomBuild Include="Assets\effect\Texture\StanBlade.png" />
-    <CustomBuild Include="Assets\effect\Texture\a.png" />
+    <ImageContentTask Include="Assets\sprite\1Pturn.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </ExcludedFromBuild>
+    </ImageContentTask>
+    <ImageContentTask Include="Assets\sprite\2Pturn.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
@@ -786,37 +785,16 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Assets\effect\blue.efk">
+    <CustomBuild Include="Assets\animation\solattack.tka">
       <FileType>Document</FileType>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\effect\white.efk">
+    <CustomBuild Include="Assets\animation\solidle.tka">
       <FileType>Document</FileType>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\sound\koma.wav">
+    <CustomBuild Include="Assets\animation\solrun.tka">
       <FileType>Document</FileType>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\effect\meteo.efk">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\effect\bluezangeki.efk">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\effect\kurozan.efk">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\effect\a.efk">
+    <CustomBuild Include="Assets\animation\solwalk.tka">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

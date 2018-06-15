@@ -142,6 +142,10 @@ namespace prefab{
 		* @brief	アニメーションの初期化。
 		*/
 		void InitAnimation(CAnimationClip* animationClips, int numAnimationClips);
+		CVector3 GetPosition()
+		{
+			return m_position;
+		}
 	private:
 		CAnimationClip*				m_animationClips = nullptr;			//!<アニメーションクリップ。
 		int							m_numAnimationClips = 0;			//!<アニメーションクリップの数。
