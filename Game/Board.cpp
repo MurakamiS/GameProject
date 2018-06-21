@@ -51,19 +51,19 @@ void Board::Update()
 		{
 		case 2:
 			 {
-				if (b > 0)SetMapB(a,b-1);//ª
-				if (b < 7)SetMapB(a,b+1);
-				if (a > 0)SetMapB(a-1, b);
-				if (a < 7)SetMapB(a+1, b);
+				if (b > 0)SetMapB(a,b-1,0);//ª
+				if (b < 7)SetMapB(a,b+1,1);//«
+				if (a > 0)SetMapB(a-1, b,2);//©
+				if (a < 7)SetMapB(a+1, b,3);//¨
 				turnA--;
 			}
 			break;
 		case -2:
 		{
-			if (b > 0)SetMapW(a, b - 1);//ª
-			if (b < 7)SetMapW(a, b + 1);
-			if (a > 0)SetMapW(a - 1, b);
-			if (a < 7)SetMapW(a + 1, b);
+			if (b > 0)SetMapW(a, b - 1,0);//ª
+			if (b < 7)SetMapW(a, b + 1,1);
+			if (a > 0)SetMapW(a - 1, b,2);
+			if (a < 7)SetMapW(a + 1, b,3);
 			turnB--;
 			}
 			break;
@@ -120,4 +120,43 @@ void Board::Render(CRenderContext& rc)
 	/*m_font.Begin(rc);
 	m_font.Draw(turnA, { 0.0f, -270.0f }, { 234.0f / 255.0f, 69.0f / 255.0f, 21.0f / 255.0f, 1.0f }, 0.0f, 1.0f, {0.0f,1.0f});
 	m_font.End(rc);*/
+}
+//”’‚Ì‚´‚Ğ‚å‚¤ t‚ª1‚Ì‚ª”’A|‚P‚Ì‚Æ‚«‚ªÂ -1‚Ì‚Æ‚«‚ÌBanXBanY‚Ì’l‚Í
+CInt2 Board::GetMapW(int t)
+{
+	CInt2 W;
+	switch (t)
+	{
+	case 1:
+		W.X = m_player->cursorX;
+		W.Y = m_player->cursorY;
+		break;
+	case -1:
+		W.X = BanX;
+		W.Y = BanY;
+		break;
+	default:
+		break;
+	}
+	return W;
+}
+//Â‚Ì‚´‚Ğ‚å‚¤
+CInt2 Board::GetMapB(int t)
+
+{
+	CInt2 B;
+	switch (t)
+	{
+	case 1:
+		B.X = BanX;
+		B.Y = BanY;
+		break;
+	case -1:
+		B.X = m_player->cursorX;
+		B.Y = m_player->cursorY;
+		break;
+	default:
+		break;
+	}
+	return B;
 }

@@ -8,6 +8,14 @@ public:
 	~Animation();
 	bool Start();
 	void Update();
+	CVector3 transPos(CInt2 s)
+	{
+		CVector3 P;
+		P = { s.X*-110.0f, 50.0f, s.Y*110.0f };
+		return P;
+	}
+	void setRotA(int p, CQuaternion* CQ);
+	void setRotB(int p,CQuaternion* cq);
 private:
 	Board * m_board = nullptr;
 	Player* m_player = nullptr;
@@ -15,6 +23,15 @@ private:
 	CVector3 m_bluePos;
 	CQuaternion m_whiteRot = CQuaternion::Identity;
 	CQuaternion m_blueRot = CQuaternion::Identity;
+	//êVÇµÇ≠Ç¬Ç≠Ç¡ÇΩCInt2ÇÇ¬Ç©Ç¡ÇƒÇ»ÇÒÇ∆Ç©Ç∑ÇÈÇº
+	CInt2 WBan;
+	CInt2 BBan;
+	int m_BanX;//
+	int m_BanY;
+	int m_WBanX, m_WBanY;
+	int m_BBanX, m_BBanY;
+	int turn;
+	int sPos;
 	enum EnAnimationClip
 	{
 		enAnimationClip_idle,
