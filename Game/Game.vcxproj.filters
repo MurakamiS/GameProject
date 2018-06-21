@@ -45,6 +45,8 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Background.cpp" />
+    <ClCompile Include="victory.cpp" />
+    <ClCompile Include="Animation11111.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -63,6 +65,8 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Background.h" />
+    <ClInclude Include="victory.h" />
+    <ClInclude Include="Animation11111.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -81,6 +85,7 @@
     <MeshContentTask Include="Assets\modelData\background.FBX" />
     <MeshContentTask Include="Assets\modelData\blueman.FBX" />
     <MeshContentTask Include="Assets\modelData\whiteman.FBX" />
+    <MeshContentTask Include="Assets\modelData\blueman1.FBX" />
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="Assets\shader\tonemap.fx">
@@ -195,7 +200,15 @@
     <CustomBuild Include="Assets\modelData\whiteman.tks" />
     <CustomBuild Include="Assets\modelData\blueman.tks" />
     <CustomBuild Include="Assets\animation\solwalk.tka" />
-    <CustomBuild Include="Assets\animation\solrun.tka" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\animation\solrun.tka" />
+    <CustomBuild Include="Assets\animation\solattack.tka" />
+    <CustomBuild Include="Assets\animation\solidle.tka" />
+    <CustomBuild Include="Assets\sound\koma.wav" />
+    <CustomBuild Include="Assets\sound\zangeki.wav" />
+    <CustomBuild Include="Assets\animation\Wbatlle.tka" />
+    <CustomBuild Include="Assets\effect\Wbatsu.efk" />
+    <CustomBuild Include="Assets\animation\a.tka" />
+    <CustomBuild Include="Assets\modelData\blueman1.tks" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -206,15 +219,13 @@
     <ImageContentTask Include="Assets\sprite\texkari3.png" />
     <ImageContentTask Include="Assets\sprite\1Pturn.png" />
     <ImageContentTask Include="Assets\sprite\2Pturn.png" />
+    <ImageContentTask Include="Assets\sprite\1Pvic.png" />
+    <ImageContentTask Include="Assets\sprite\2Pvic.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\animation\solattack.tka" />
-    <None Include="Assets\animation\solidle.tka" />
   </ItemGroup>
 </Project>

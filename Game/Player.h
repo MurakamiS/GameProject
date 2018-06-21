@@ -15,6 +15,7 @@ public:
 	int turn = -1; //現在のターン　1が白、-1が青
 	int cursorX=3;
 	int cursorY=3;
+	
 	int time = 0;
 	prefab::CSkinModelRender* m_skinModelRender = nullptr;
 	Board* m_board = nullptr;

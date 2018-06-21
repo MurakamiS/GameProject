@@ -7,7 +7,6 @@ Animation::Animation()
 {
 }
 
-
 Animation::~Animation()
 {
 }
@@ -19,7 +18,9 @@ bool Animation::Start()
 	m_animClips[enAnimationClip_idle].Load(L"animation/solidle.tka");
 	m_animClips[enAnimationClip_Walk].Load(L"animation/solwalk.tka");
 	m_animClips[enAnimationClip_Run].Load(L"animation/solrun.tka");
+	m_animClips[enAnimationClip_a].Load(L"animation/a.tka");
 	m_animClips[enAnimationClip_Attack].Load(L"animation/solattack.tka");
+	//m_animClips[enAnimationClip_idle1].SetLoopFlag(true);
 	m_animClips[enAnimationClip_idle].SetLoopFlag(true);
 	m_animClips[enAnimationClip_Walk].SetLoopFlag(true);
 	m_animClips[enAnimationClip_Run].SetLoopFlag(true);
@@ -38,8 +39,9 @@ bool Animation::Start()
 	m_SkinModelRenderW->SetPosition(m_whitePos);
 	return true;
 }
-void Animation::Update()
-{
+void Animation::Update(){
+	
 	
 	count++;
 }
+

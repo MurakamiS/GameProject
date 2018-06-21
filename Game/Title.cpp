@@ -5,7 +5,7 @@
 #include "GameCamera.h"
 #include "Player.h"
 #include "Animation.h"
-
+#include "victory.h"
 
 Title::Title()
 {
@@ -33,6 +33,7 @@ void Title::Update()
 			NewGO<Game>(0, "Game");
 			NewGO<Player>(0, "Player");
 			NewGO<Animation>(0, "Animation");
+			//NewGO<victory>(0, "victory");
 			DeleteGO(this);
 
 		}

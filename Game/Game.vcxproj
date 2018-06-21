@@ -620,6 +620,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animation11111.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Enshutsu.cpp" />
@@ -640,9 +641,11 @@
     <ClCompile Include="Stone.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="TurnSprite.cpp" />
+    <ClCompile Include="victory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animation11111.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Enshutsu.h" />
@@ -653,6 +656,7 @@
     <ClInclude Include="Stone.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="TurnSprite.h" />
+    <ClInclude Include="victory.h" />
     <CustomBuild Include="Assets\shader\LightingFunction.h" />
     <CustomBuild Include="Assets\shader\modelCB.h" />
     <CustomBuild Include="Assets\shader\modelSRV.h" />
@@ -670,6 +674,7 @@
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
     <MeshContentTask Include="Assets\modelData\blueman.FBX" />
+    <MeshContentTask Include="Assets\modelData\blueman1.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
     <MeshContentTask Include="Assets\modelData\whiteman.FBX" />
@@ -763,6 +768,8 @@
       </ExcludedFromBuild>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\2Pturn.png" />
+    <ImageContentTask Include="Assets\sprite\1Pvic.png" />
+    <ImageContentTask Include="Assets\sprite\2Pvic.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
@@ -795,6 +802,36 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\animation\solwalk.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\koma.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\zangeki.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\Wbatlle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\Wbatsu.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\a.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\modelData\blueman1.tks">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

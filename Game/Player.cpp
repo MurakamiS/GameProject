@@ -5,7 +5,8 @@
 #include "Game.h"
 #include "Enshutsu.h"
 #include "TurnSprite.h"
-
+#include "victory.h"
+#include "Animation11111.h"
 Player::Player()
 {
 }
@@ -33,7 +34,6 @@ void Player::Update()
 {
 	//模索中
 	
-
 
 	//タイマースタート？
 	if (SousaFlag == 1&&turn==1) {
@@ -69,8 +69,9 @@ void Player::Update()
 			
 				m_board->Haichi = 1;
 			
-				NewGO<Enshutsu>(0, "enshutsu");
-			
+				//NewGO<Enshutsu>(0, "enshutsu");
+				//NewGO<victory>(0, "victory");
+			//	NewGO<Animation11111>(0, "animation11111");
 			}
 		}
 	}
@@ -110,8 +111,8 @@ void Player::Update()
 				SousaFlag = 0;
 				m_board->Haichi = 1;
 				
-				NewGO<Enshutsu>(0, "enshutsu");
-			
+				//NewGO<Enshutsu>(0, "enshutsu");
+				NewGO<victory>(0, "victory");
 
 			}
 		}

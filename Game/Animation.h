@@ -8,6 +8,7 @@ public:
 	~Animation();
 	bool Start();
 	void Update();
+	
 private:
 	Board * m_board = nullptr;
 	Player* m_player = nullptr;
@@ -21,10 +22,14 @@ private:
 		enAnimationClip_Attack,
 		enAnimationClip_Walk,
 		enAnimationClip_Run,
+		enAnimationClip_a,
 		enAnimationClip_Num,
+
 	};
 	prefab::CSkinModelRender* m_SkinModelRenderW = nullptr;
 	prefab::CSkinModelRender* m_SkinModelRenderB = nullptr;
+	//CVector3 position = { 100.0f,10.0f,100.0f };
+	//CVector3 scale = { 5.0f,5.0f,5.0f };
 	CAnimationClip m_animClips[enAnimationClip_Num];
 	//‚±‚ê‚ªˆê’è‚Ì”’l‚É’B‚·‚é‚Æ‚¨‚í‚è
 	int count = 0;
