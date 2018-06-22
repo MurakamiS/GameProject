@@ -206,9 +206,7 @@
     <CustomBuild Include="Assets\sound\koma.wav" />
     <CustomBuild Include="Assets\sound\zangeki.wav" />
     <CustomBuild Include="Assets\animation\Wbatlle.tka" />
-    <CustomBuild Include="Assets\effect\Wbatsu.efk" />
-    <CustomBuild Include="Assets\animation\a.tka" />
-    <CustomBuild Include="Assets\modelData\blueman1.tks" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\effect\Wbatsu.efk" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -227,5 +225,9 @@
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Desktop\Game.make\a.tka" />
+    <None Include="Assets\animation\a.tka" />
   </ItemGroup>
 </Project>

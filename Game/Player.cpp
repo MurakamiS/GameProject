@@ -70,7 +70,7 @@ void Player::Update()
 				m_board->Haichi = 1;
 			
 				//NewGO<Enshutsu>(0, "enshutsu");
-				//NewGO<victory>(0, "victory");
+				NewGO<victory>(0, "victory");
 			//	NewGO<Animation11111>(0, "animation11111");
 			}
 		}

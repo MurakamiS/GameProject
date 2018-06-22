@@ -826,12 +826,8 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\..\..\Desktop\Game.make\a.tka" />
     <CustomBuild Include="Assets\animation\a.tka">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="Assets\modelData\blueman1.tks">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
