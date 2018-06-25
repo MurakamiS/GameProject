@@ -21,15 +21,8 @@ bool Enshutsu::Start()
 	sss = NewGO<prefab::CSoundSource>(0);
 	sss->Init("sound/koma.wav");
 	sss->Play(false);*/
-	if (m_board->Koushin == 0 && m_player->turn == 1) {
-		
-		
-		
-		/////////////////////////////////
-		/////////‚±‚±‚©‚ç
-		////////////////////////////////
-		// 
-		//  «‚±‚ê‚Å‚Å‚«‚é‚ÆŽv‚Á‚½
+	if (m_board->Koushin == 0 && m_player->turn == 1) 
+	{
 		if (m_player->cursorX!=0&& m_player->cursorX !=7&& m_player->cursorY !=0&& m_player->cursorY !=7 ) {
 			effect->SetScale(scale);
 			CVector3 emitPos1{ 110.0f,1.0f,25.0f };

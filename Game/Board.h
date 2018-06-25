@@ -2,6 +2,7 @@
 #include "Animation.h"
 class Game;
 class Player;
+class Animation;
 class Board:public IGameObject
 {
 public:
@@ -22,6 +23,9 @@ public:
 	int Haichi = 0;//新しい石を配置して配列の更新が必要な時1になる
 	int BanX;
 	int BanY;
+	int Animflag = 0;
+	
+	
 private:
 	//残りターン数。残コマ数表示の時はこれ使う。
 	int turnA = 10;	//青
@@ -30,6 +34,7 @@ private:
 	//int turn = 1;
 	Game* m_game = nullptr;
 	Player* m_player = nullptr;
+	Animation* m_animation = nullptr;
 	void SetMapB(int a, int b)
 	{
 		switch (Banmen[a][b])
@@ -38,7 +43,9 @@ private:
 			//ここにえんしゅつのやつ
 			BanX = a;
 			BanY = b;
+			Animflag = 1;
 			NewGO<Animation>(0);
+			
 			break;
 		case 0:Banmen[a][b] = 1;
 			break;

@@ -32,8 +32,6 @@ void Title::Update()
 		if (!m_fade->IsFade()) {
 			NewGO<Game>(0, "Game");
 			NewGO<Player>(0, "Player");
-			NewGO<Animation>(0, "Animation");
-			//NewGO<victory>(0, "victory");
 			DeleteGO(this);
 
 		}
@@ -43,8 +41,6 @@ void Title::Update()
 				m_WaitFadeOut = true;
 				m_fade->StartFadeOut();
 				NewGO<GameCamera>(0, "gamecamera");
-			
-				
 			}
 		}
 	}

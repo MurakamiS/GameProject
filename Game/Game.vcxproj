@@ -621,6 +621,7 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Animation11111.cpp" />
+    <ClCompile Include="AnimFade.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="Enshutsu.cpp" />
@@ -646,6 +647,7 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Animation11111.h" />
+    <ClInclude Include="AnimFade.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Board.h" />
     <ClInclude Include="Enshutsu.h" />
@@ -674,7 +676,6 @@
     <MeshContentTask Include="Assets\modelData\Bankariwhite.FBX" />
     <MeshContentTask Include="Assets\modelData\bluekari.FBX" />
     <MeshContentTask Include="Assets\modelData\blueman.FBX" />
-    <MeshContentTask Include="Assets\modelData\blueman1.FBX" />
     <MeshContentTask Include="Assets\modelData\unityChan.fbx" />
     <MeshContentTask Include="Assets\modelData\whitekari.FBX" />
     <MeshContentTask Include="Assets\modelData\whiteman.FBX" />
@@ -816,18 +817,22 @@
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="Assets\animation\Wbatlle.tka">
-      <FileType>Document</FileType>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="Assets\effect\Wbatsu.efk">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Desktop\Game.make\a.tka" />
-    <CustomBuild Include="Assets\animation\a.tka">
+    <CustomBuild Include="Assets\animation\victory.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\battle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\diffence.tka">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

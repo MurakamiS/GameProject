@@ -7,6 +7,10 @@ public:
 	bool Start() override;
 	void Update() override;
 	void PostRender(CRenderContext& rc) override;
+	
+	//void FadeIN();
+	//void FadeOUT();
+
 	void StartFadeIn()
 	{
 		m_state = enState_FadeIn;
@@ -41,5 +45,6 @@ private:
 	CSprite m_sprite;
 	int time = 0;
 	float m_currentAlpha = 1.0f;
+
 };
 

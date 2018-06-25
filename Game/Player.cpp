@@ -6,7 +6,6 @@
 #include "Enshutsu.h"
 #include "TurnSprite.h"
 #include "victory.h"
-#include "Animation11111.h"
 Player::Player()
 {
 }
@@ -23,18 +22,14 @@ bool Player::Start()
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	m_board = FindGO<Board>("board");
 	m_game = FindGO<Game>("Game");
-	m_turnsp=NewGO<TurnSprite>(0, "turnsp");
+/*	m_turnsp=*/NewGO<TurnSprite>(0, "turnsp");
 	
-
-
-
 	return true;
 }
 void Player::Update()
 {
 	//模索中
 	
-
 	//タイマースタート？
 	if (SousaFlag == 1&&turn==1) {
 		//time++;
@@ -66,17 +61,11 @@ void Player::Update()
 				SousaFlag = 0;//操作を不可能にする
 				m_board->Banmen[cursorX][cursorY] = 2;
 				NewGO<Stone>(0, nullptr);
-			
 				m_board->Haichi = 1;
-			
-				//NewGO<Enshutsu>(0, "enshutsu");
-				NewGO<victory>(0, "victory");
-			//	NewGO<Animation11111>(0, "animation11111");
+				NewGO<Enshutsu>(0, "enshutsu");
 			}
 		}
 	}
-	
-	
 	if (SousaFlag == 1 && turn == -1) {
 		//time++;
 		if (Pad(1).IsTrigger(enButtonRight))
@@ -103,21 +92,16 @@ void Player::Update()
 		//石を配置して盤面の更新を行う 同じマスに複数おけるのを修正予定 置けない時は置けないというのをだす？
 		if (Pad(1).IsTrigger(enButtonStart))
 		{
-			if (m_board->Banmen[cursorX][cursorY] != -2 && m_board->Banmen[cursorX][cursorY] != 2) {
-
+			if (m_board->Banmen[cursorX][cursorY] != -2 && m_board->Banmen[cursorX][cursorY] != 2)
+			{
 				m_board->Banmen[cursorX][cursorY] = -2;
 				NewGO<Stone>(0, nullptr);
-				
 				SousaFlag = 0;
 				m_board->Haichi = 1;
-				
-				//NewGO<Enshutsu>(0, "enshutsu");
-				NewGO<victory>(0, "victory");
-
+				NewGO<Enshutsu>(0, "enshutsu");
 			}
 		}
 	}
-	
 	m_skinModelRender->SetPosition({ cursorX*-110.0f,50.0f,cursorY*110.0f });
 	m_position = { cursorX*-110.0f,50.0f,cursorY*110.0f };
 }
