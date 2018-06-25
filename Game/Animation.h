@@ -10,8 +10,8 @@ public:
 	~Animation();
 	bool Start();
 	void Update();
-	
-private:	
+
+private:
 	Board * m_board = nullptr;
 	Player* m_player = nullptr;
 	Fade* m_fade = nullptr;

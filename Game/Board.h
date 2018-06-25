@@ -3,7 +3,7 @@
 class Game;
 class Player;
 class Animation;
-class Board:public IGameObject
+class Board :public IGameObject
 {
 public:
 	Board();
@@ -12,7 +12,7 @@ public:
 	bool Start();
 	void Update();
 	void Render(CRenderContext& rc);
-	prefab::CSkinModelRender* m_skinModelRender[8][8] = { {nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr},{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } };	//スキンモデルレンダラー。
+	prefab::CSkinModelRender* m_skinModelRender[8][8] = { { nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr },{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } ,{ nullptr,nullptr, nullptr, nullptr, nullptr, nullptr, nullptr, nullptr } };	//スキンモデルレンダラー。
 	CFont m_font;
 	int ScoreA = 0;
 	int ScoreB = 0;
@@ -24,14 +24,14 @@ public:
 	int BanX;
 	int BanY;
 	int Animflag = 0;
-	
-	
+
+
 private:
 	//残りターン数。残コマ数表示の時はこれ使う。
 	int turnA = 10;	//青
 	int turnB = 10;	//白
-	////現在のターン　1が青、-1が白
-	//int turn = 1;
+					////現在のターン　1が青、-1が白
+					//int turn = 1;
 	Game* m_game = nullptr;
 	Player* m_player = nullptr;
 	Animation* m_animation = nullptr;
@@ -45,7 +45,7 @@ private:
 			BanY = b;
 			Animflag = 1;
 			NewGO<Animation>(0);
-			
+
 			break;
 		case 0:Banmen[a][b] = 1;
 			break;

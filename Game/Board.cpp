@@ -18,31 +18,31 @@ bool Board::Start()
 	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	//m_skinModelRender->Init(L"modelData/Bankari.cmo");
 	//m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
-	
-		for (int i = 0; i < 8; i++)
-		{
-			for (int j = 0; j < 8; j++) {
-				m_skinModelRender[i][j] = NewGO<prefab::CSkinModelRender>(0);
-				m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
-				m_skinModelRender[i][j]->SetScale({ 1.0f, 1.0f, 1.0f });
-				m_skinModelRender[i][j]->SetPosition({ -110.0f*i,0.0f, 110.0f*j });
-			}
+
+	for (int i = 0; i < 8; i++)
+	{
+		for (int j = 0; j < 8; j++) {
+			m_skinModelRender[i][j] = NewGO<prefab::CSkinModelRender>(0);
+			m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
+			m_skinModelRender[i][j]->SetScale({ 1.0f, 1.0f, 1.0f });
+			m_skinModelRender[i][j]->SetPosition({ -110.0f*i,0.0f, 110.0f*j });
 		}
-		//盤面配列の初期化。
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				Banmen[i][j] = 0;
-			}
+	}
+	//盤面配列の初期化。
+	for (int i = 0; i < 8; i++) {
+		for (int j = 0; j < 8; j++) {
+			Banmen[i][j] = 0;
 		}
-		m_game = FindGO<Game>("Game");
-		m_player = FindGO<Player>("Player");
-		return true;
-	
+	}
+	m_game = FindGO<Game>("Game");
+	m_player = FindGO<Player>("Player");
+	return true;
+
 }
 void Board::Update()
 {
 	//
-	
+
 	//
 	//置いた石の周りの色を更新///////////////////////////////////////////つぎここからやれ
 	if (Haichi == 1)
@@ -82,37 +82,37 @@ void Board::Update()
 		}
 	}
 	//得点の計算
-	if (Koushin==1) {
-	
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j < 8; j++) {
-					switch (Banmen[i][j])
-					{
-					case 0:
-						m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
-						break;
-					case 1:
-						ScoreA++;
-						m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
-						break;
-					case 2:
-						ScoreA++;
-						m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
-						break;
-					case -1:
-						ScoreB++;
-						m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
-						break;
-					case -2:
-						ScoreB++;
-						m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
-						break;
-					default:
-						break;
-					}
+	if (Koushin == 1) {
+
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 8; j++) {
+				switch (Banmen[i][j])
+				{
+				case 0:
+					m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
+					break;
+				case 1:
+					ScoreA++;
+					m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
+					break;
+				case 2:
+					ScoreA++;
+					m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
+					break;
+				case -1:
+					ScoreB++;
+					m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
+					break;
+				case -2:
+					ScoreB++;
+					m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
+					break;
+				default:
+					break;
 				}
 			}
-		
+		}
+
 		Koushin = 0;
 		m_player->SousaFlag = 1;
 		if (m_player->turn == 1)

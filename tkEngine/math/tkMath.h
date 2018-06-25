@@ -35,6 +35,12 @@ namespace tkEngine{
 			return t0 + (t1 - t0)*rate;
 		}
 	};
+	//2ŒÂ‚Ìˆø”‚Á‚Ä‚¢‚­‚½‚ß‚Ì\‘¢‘Ì
+	struct CInt2
+	{
+		int X;
+		int Y;
+	};
 }
 
 #endif //_TK_MATH_H_
