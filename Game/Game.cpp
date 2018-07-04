@@ -5,7 +5,7 @@
 #include "Enshutsu.h"
 #include "Background.h"
 #include "Player.h"
-
+#include "Animation.h"
 Game::Game()
 {
 }
@@ -39,10 +39,11 @@ bool Game::Start()
 	NewGO<Background>(0, "Back");
 	m_board = FindGO<Board>("board");
 	//プレイヤークラスインスタンス作る
-	//フェードインの処理。
+	//フェードインの処理。k
 	m_fade = FindGO<Fade>("fade");
-	m_fade->StartFadeIn();
 	m_player=FindGO<Player>("Player");
+	m_fade->StartFadeIn();
+	
 	return true;
 }
 void Game::Update()

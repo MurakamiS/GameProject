@@ -42,6 +42,7 @@ private:
 	Player* m_player = nullptr;
 	TurnSprite* m_turnsp = nullptr;
 	Enshutsu* m_enshutsu = nullptr;
+	Animation* m_animation = nullptr;
 	CFont m_fontTest;
 	float m_timer = 30.0f;								//!<タイマー
 	//std::unique_ptr<DirectX::SpriteFont> m_timerFont;	//!<タイマー用のフォント。

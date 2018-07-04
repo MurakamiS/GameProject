@@ -7,7 +7,6 @@
 
 bool Enshutsu::Start()
 {
-	
 	prefab::CEffect* effect = NewGO<prefab::CEffect>(0);
 	rot.SetRotation(CVector3::AxisZ, 90);
 	m_skinModelData.Load(L"modelData/whitekari.cmo");
@@ -17,10 +16,10 @@ bool Enshutsu::Start()
 	ss = NewGO<prefab::CSoundSource>(0);
 	ss->Init("sound/zangeki.wav");	
 	ss->Play(false);
-	/*prefab::CSoundSource* sss;
-	sss = NewGO<prefab::CSoundSource>(0);
-	sss->Init("sound/koma.wav");
-	sss->Play(false);*/
+
+
+
+
 	if (m_board->Koushin == 0 && m_player->turn == 1) 
 	{
 		if (m_player->cursorX!=0&& m_player->cursorX !=7&& m_player->cursorY !=0&& m_player->cursorY !=7 ) {
@@ -165,11 +164,10 @@ bool Enshutsu::Start()
 		}
 
 	}
-		
 	if (m_board->Koushin == 0 && m_player->turn == -1) {
 		if (m_player->cursorX != 0 && m_player->cursorX != 7 && m_player->cursorY != 0 && m_player->cursorY != 7) {
 			effect->SetScale(scale);
-			CVector3 emitPos1{ 110.0f,1.0f,30.0f };
+			CVector3 emitPos1{ 110.0f,1.0f,20.0f };
 			emitPos1 += m_player->m_position;
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
@@ -177,7 +175,7 @@ bool Enshutsu::Start()
 
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos2{ -110.0f,1.0f,30.0f };
+			CVector3 emitPos2{ -110.0f,1.0f,20.0f };
 			emitPos2 += m_player->m_position;
 			effect->SetPosition(emitPos2);
 			effect->SetRotation(rot);
@@ -193,7 +191,7 @@ bool Enshutsu::Start()
 
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos4{ 0.0f,1.0f,-90.0f };
+			CVector3 emitPos4{ 0.0f,1.0f,-85.0f };
 			emitPos4+= m_player->m_position;
 			effect->SetPosition(emitPos4);
 			effect->SetRotation(rot);
@@ -202,7 +200,7 @@ bool Enshutsu::Start()
 		if (m_player->cursorX == 0) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos3{ -110.0f,1.0f,0.0f };
+			CVector3 emitPos3{ -110.0f,1.0f,10.0f };
 			emitPos3 += m_player->m_position;
 			effect->SetPosition(emitPos3);
 			effect->SetRotation(rot);
@@ -210,7 +208,7 @@ bool Enshutsu::Start()
 			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos1{ 0.0f,1.0f,110.0f };
+				CVector3 emitPos1{ 0.0f,1.0f,120.0f };
 				emitPos1 += m_player->m_position;
 				effect->SetPosition(emitPos1);
 				effect->SetRotation(rot);
@@ -218,7 +216,7 @@ bool Enshutsu::Start()
 
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,-110.0f };
+				CVector3 emitPos2{ 0.0f,1.0f,-100.0f };
 				emitPos2 += m_player->m_position;
 				effect->SetPosition(emitPos2);
 				effect->SetRotation(rot);
@@ -228,7 +226,7 @@ bool Enshutsu::Start()
 		if (m_player->cursorX == 7) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos1{ 110.0f,1.0f,0.0f };
+			CVector3 emitPos1{ 110.0f,1.0f,10.0f };
 			emitPos1 += m_player->m_position;
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
@@ -237,7 +235,7 @@ bool Enshutsu::Start()
 			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,110.0f };
+				CVector3 emitPos2{ 0.0f,1.0f,125.0f };
 				emitPos2 += m_player->m_position;
 				effect->SetPosition(emitPos2);
 				effect->SetRotation(rot);
@@ -245,7 +243,7 @@ bool Enshutsu::Start()
 
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos3{ 0.0f,1.0f,-11.0f };
+				CVector3 emitPos3{ 0.0f,1.0f,-90.0f };
 				emitPos3 += m_player->m_position;
 				effect->SetPosition(emitPos3);
 				effect->SetRotation(rot);
@@ -255,7 +253,7 @@ bool Enshutsu::Start()
 		if (m_player->cursorY == 0) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos1{ 0.0f,1.0f,110.0f };
+			CVector3 emitPos1{ 0.0f,1.0f,130.0f };
 			emitPos1 += m_player->m_position;
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
@@ -264,7 +262,7 @@ bool Enshutsu::Start()
 			if (m_player->cursorX != 0 && m_player->cursorX != 7) {
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos2{ -110.0f,1.0f,0.0f };
+				CVector3 emitPos2{ -110.0f,1.0f,20.0f };
 				emitPos2 += m_player->m_position;
 				effect->SetPosition(emitPos2);
 				effect->SetRotation(rot);
@@ -272,7 +270,7 @@ bool Enshutsu::Start()
 
 				effect = NewGO<prefab::CEffect>(0);
 				effect->SetScale(scale);
-				CVector3 emitPos3{ 110.0f,1.0f,0.0f };
+				CVector3 emitPos3{ 110.0f,1.0f,20.0f };
 				emitPos3 += m_player->m_position;
 				effect->SetPosition(emitPos3);
 				effect->SetRotation(rot);
@@ -308,8 +306,6 @@ bool Enshutsu::Start()
 		}
 
 	}
-
-	
 	return true;
 }
 void Enshutsu :: Update()
@@ -322,7 +318,6 @@ void Enshutsu :: Update()
 		ss->Play(false);
 		DeleteGO(this);
 	}
-
 }
 void Enshutsu::PostRender(CRenderContext& rc) {
 

@@ -3,22 +3,16 @@
 #include "Game.h"
 #include "Player.h"
 
-
 Board::Board()
 {
 }
 
-
 Board::~Board()
 {
 }
+
 bool Board::Start()
 {
-	//盤面のロード、配置
-	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
-	//m_skinModelRender->Init(L"modelData/Bankari.cmo");
-	//m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
-
 	for (int i = 0; i < 8; i++)
 	{
 		for (int j = 0; j < 8; j++) {
@@ -41,10 +35,6 @@ bool Board::Start()
 }
 void Board::Update()
 {
-	//
-
-	//
-	//置いた石の周りの色を更新///////////////////////////////////////////つぎここからやれ
 	if (Haichi == 1)
 	{
 		k++;
@@ -118,17 +108,17 @@ void Board::Update()
 		if (m_player->turn == 1)
 		{
 			m_player->turn = -1;
+			
 		}
 		else if (m_player->turn == -1)
 		{
 			m_player->turn = 1;
+		
 		}
 		m_game->ResetTimer();	//タイマーリセット
 	}
 }
 void Board::Render(CRenderContext& rc)
 {
-	/*m_font.Begin(rc);
-	m_font.Draw(turnA, { 0.0f, -270.0f }, { 234.0f / 255.0f, 69.0f / 255.0f, 21.0f / 255.0f, 1.0f }, 0.0f, 1.0f, {0.0f,1.0f});
-	m_font.End(rc);*/
+	
 }

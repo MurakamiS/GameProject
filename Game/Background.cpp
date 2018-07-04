@@ -7,7 +7,6 @@ Background::Background()
 
 Background::~Background()
 {
-
 }
 bool Background::Start()
 {

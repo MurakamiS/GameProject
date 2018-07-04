@@ -22,7 +22,7 @@ public:
 	Game* m_game = nullptr;
 	TurnSprite* m_turnsp =nullptr;
 	CVector3 m_position = CVector3::Zero;
-	//void PostRender(CRenderContext& rc);
+	
 
 
 
