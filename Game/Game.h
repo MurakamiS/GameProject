@@ -1,15 +1,14 @@
 #pragma once
 #include "Fade.h"
-#include "tkEngine/graphics/effect/tkEffect.h"
+
 #include "Title.h"
 #include "Board.h"
-#include "TurnSprite.h"
-#include "Enshutsu.h"
-#include "tkEngine/graphics/font/tkFont.h"
 
+#include "tkEngine/graphics/font/tkFont.h"
 
 class Board;
 class Stone;
+class Player;
 class Game : public IGameObject
 {
 public:
@@ -38,8 +37,11 @@ private:
 	Fade * m_fade = nullptr;
 	Board* m_board = nullptr;
 	Stone* m_stone = nullptr;
-	TurnSprite* m_turnsp = nullptr;
-	Enshutsu* m_enshutsu = nullptr;
+	Player* m_player = nullptr;
+	
+
+	Animation* m_animation = nullptr;
+	
 	CFont m_fontTest;
 	float m_timer = 30.0f;								//!<タイマー
 	//std::unique_ptr<DirectX::SpriteFont> m_timerFont;	//!<タイマー用のフォント。

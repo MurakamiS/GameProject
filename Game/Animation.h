@@ -1,7 +1,7 @@
 #pragma once
 class Player;
 class Board;
-class Animation:public IGameObject
+class Animation :public IGameObject
 {
 public:
 	Animation();
@@ -15,7 +15,7 @@ public:
 		return P;
 	}
 	void setRotA(int p, CQuaternion* CQ);
-	void setRotB(int p,CQuaternion* cq);
+	void setRotB(int p, CQuaternion* cq);
 private:
 	Board * m_board = nullptr;
 	Player* m_player = nullptr;
@@ -46,4 +46,3 @@ private:
 	//‚±‚ê‚ªˆê’è‚Ì”’l‚É’B‚·‚é‚Æ‚¨‚í‚è
 	int count = 0;
 };
-

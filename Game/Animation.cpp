@@ -31,7 +31,7 @@ bool Animation::Start()
 	//スキンモデルレンダラーを作成
 	m_SkinModelRenderB = NewGO<prefab::CSkinModelRender>(0, "solB");
 	m_SkinModelRenderW = NewGO<prefab::CSkinModelRender>(0, "solW");
-	m_SkinModelRenderB->Init(L"modelData/blueman.cmo",m_animClips,enAnimationClip_Num);
+	m_SkinModelRenderB->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
 	m_SkinModelRenderW->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
 	m_SkinModelRenderB->PlayAnimation(enAnimationClip_idle);
 	m_SkinModelRenderW->PlayAnimation(enAnimationClip_idle);
@@ -63,18 +63,19 @@ bool Animation::Start()
 
 	m_SkinModelRenderB->SetRotation(m_blueRot);
 	m_SkinModelRenderW->SetRotation(m_whiteRot);
+
 	return true;
 }
 void Animation::Update()
 {
-	
+
 	count++;
 	if (count > 60)
 	{
 		
 	}
 }
-void Animation::setRotA(int p,CQuaternion* CQ)//置いたほう pは配置した石からみてどの方向のマスが反応したか　0123で上下左右の順番
+void Animation::setRotA(int p, CQuaternion* CQ)//置いたほう pは配置した石からみてどの方向のマスが反応したか　0123で上下左右の順番
 {
 	switch (p)
 	{
@@ -93,7 +94,7 @@ void Animation::setRotA(int p,CQuaternion* CQ)//置いたほう pは配置した石からみて
 		break;
 	}
 }
-void Animation::setRotB(int p,CQuaternion* cq)//おかれたほう
+void Animation::setRotB(int p, CQuaternion* cq)//おかれたほう
 {
 	switch (p)
 	{

@@ -1,10 +1,11 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Stone.h"
-#include "TurnSprite.h"
-#include "Enshutsu.h"
-#include "Background.h"
 
+#include "TurnSprite.h";
+#include "Background.h"
+#include "Player.h"
+#include "Animation.h"
 
 Game::Game()
 {
@@ -36,11 +37,14 @@ bool Game::Start()
 
 //ゲームプレイに必要なクラスのインスタンスを生成。
 	NewGO<Board>(0, "board");
+	
 	NewGO<Background>(0, "Back");
+//	NewGO<Count>(0, "count");
 	m_board = FindGO<Board>("board");
 	//プレイヤークラスインスタンス作る
-	//フェードインの処理。
+	//フェードインの処理。k
 	m_fade = FindGO<Fade>("fade");
+	m_player=FindGO<Player>("Player");
 	m_fade->StartFadeIn();
 	
 	return true;
@@ -70,8 +74,20 @@ void Game::Update()
 	}
 	*/
 
-	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime());
-}
+	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime()); {
+		if (m_timer == 0) {
+			if (m_player->turn == -1) {
+				m_player->turn = 1;
+			}
+			else if (m_player->turn == 1) {
+				m_player->turn = -1;
+			}
+			NewGO<TurnSprite>(0, "turnsp");
+			ResetTimer();
+			}
+		}
+	}
+
 void Game::Render(CRenderContext& rc)
 {
 }

@@ -620,8 +620,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animation2.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Count.cpp" />
     <ClCompile Include="Enshutsu.cpp" />
     <ClCompile Include="Fade.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -640,11 +642,15 @@
     <ClCompile Include="Stone.cpp" />
     <ClCompile Include="Title.cpp" />
     <ClCompile Include="TurnSprite.cpp" />
+    <ClCompile Include="victory.cpp" />
+    <ClCompile Include="VictTet.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animation2.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Count.h" />
     <ClInclude Include="Enshutsu.h" />
     <ClInclude Include="Fade.h" />
     <ClInclude Include="GameCamera.h" />
@@ -653,6 +659,8 @@
     <ClInclude Include="Stone.h" />
     <ClInclude Include="Title.h" />
     <ClInclude Include="TurnSprite.h" />
+    <ClInclude Include="victory.h" />
+    <ClInclude Include="VictTet.h" />
     <CustomBuild Include="Assets\shader\LightingFunction.h" />
     <CustomBuild Include="Assets\shader\modelCB.h" />
     <CustomBuild Include="Assets\shader\modelSRV.h" />
@@ -763,6 +771,9 @@
       </ExcludedFromBuild>
     </ImageContentTask>
     <ImageContentTask Include="Assets\sprite\2Pturn.png" />
+    <ImageContentTask Include="Assets\sprite\1Pvic.png" />
+    <ImageContentTask Include="Assets\sprite\2Pvic.png" />
+    <ImageContentTask Include="Assets\sprite\button.png" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </Image>
@@ -795,6 +806,36 @@
       <FileType>Document</FileType>
     </CustomBuild>
     <CustomBuild Include="Assets\animation\solwalk.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\koma.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\sound\zangeki.wav">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\Wbatsu.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\victory.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\battle.tka">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\animation\diffence.tka">
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>

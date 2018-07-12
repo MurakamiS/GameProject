@@ -18,7 +18,7 @@ bool Board::Start()
 	//m_skinModelRender = NewGO<prefab::CSkinModelRender>(0);
 	//m_skinModelRender->Init(L"modelData/Bankari.cmo");
 	//m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
-	for (int i=0;i<8;i++)
+	for (int i = 0; i<8; i++)
 	{
 		for (int j = 0; j < 8; j++) {
 			m_skinModelRender[i][j] = NewGO<prefab::CSkinModelRender>(0);
@@ -33,8 +33,8 @@ bool Board::Start()
 			Banmen[i][j] = 0;
 		}
 	}
-	 m_game = FindGO<Game>("Game");
-	 m_player = FindGO<Player>("Player");
+	m_game = FindGO<Game>("Game");
+	m_player = FindGO<Player>("Player");
 	return true;
 }
 void Board::Update()
@@ -45,74 +45,84 @@ void Board::Update()
 	//置いた石の周りの色を更新///////////////////////////////////////////つぎここからやれ
 	if (Haichi == 1)
 	{
-		int a = m_player->cursorX;
-		int b = m_player->cursorY;
-		switch (Banmen[a][b])
-		{
-		case 2:
-			 {
-				if (b > 0)SetMapB(a,b-1,0);//↑
-				if (b < 7)SetMapB(a,b+1,1);//↓
-				if (a > 0)SetMapB(a-1, b,2);//←
-				if (a < 7)SetMapB(a+1, b,3);//→
+		count++;
+		if (count == 15) {
+			int a = m_player->cursorX;
+			int b = m_player->cursorY;
+			switch (Banmen[a][b])
+			{
+			case 2:
+			{
+				if (b > 0)SetMapB(a, b - 1, 0);//↑
+				if (b < 7)SetMapB(a, b + 1, 1);//↓
+				if (a > 0)SetMapB(a - 1, b, 2);//←
+				if (a < 7)SetMapB(a + 1, b, 3);//→
 				turnA--;
 			}
 			break;
-		case -2:
-		{
-			if (b > 0)SetMapW(a, b - 1,0);//↑
-			if (b < 7)SetMapW(a, b + 1,1);
-			if (a > 0)SetMapW(a - 1, b,2);
-			if (a < 7)SetMapW(a + 1, b,3);
-			turnB--;
+			case -2:
+			{
+				if (b > 0)SetMapW(a, b - 1, 0);//↑
+				if (b < 7)SetMapW(a, b + 1, 1);
+				if (a > 0)SetMapW(a - 1, b, 2);
+				if (a < 7)SetMapW(a + 1, b, 3);
+				turnB--;
 			}
 			break;
-		default:break;
+			default:break;
+			}
+			Haichi = 0;
+			Koushin = 1;
+			count = 0;
 		}
-		Haichi = 0;
-		Koushin = 1;
 	}
 	//得点の計算
-	if (Koushin==1) {
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				switch (Banmen[i][j])
-				{
-				case 0:
-					m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
-					break;
-				case 1:
-					ScoreA++;
-					m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
-					break;
-				case 2:
-					ScoreA++;
-					m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
-					break;
-				case -1:
-					ScoreB++;
-					m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
-					break;
-				case -2:
-					ScoreB++;
-					m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
-					break;
-				default:
-					break;
+	if (Koushin == 1) {
+		
+		
+			for (int i = 0; i < 8; i++) {
+				for (int j = 0; j < 8; j++) {
+					switch (Banmen[i][j])
+					{
+					case 0:
+						m_skinModelRender[i][j]->Init(L"modelData/Bankarinaka.cmo");
+						break;
+					case 1:
+						ScoreA++;
+						m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
+						break;
+					case 2:
+						ScoreA++;
+						m_skinModelRender[i][j]->Init(L"modelData/Bankari.cmo");
+						break;
+					case -1:
+						ScoreB++;
+						m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
+						break;
+					case -2:
+						ScoreB++;
+						m_skinModelRender[i][j]->Init(L"modelData/Bankariwhite.cmo");
+						break;
+					default:
+						break;
+					}
 				}
 			}
-		}
-		Koushin = 0;
-		m_player->SousaFlag = 1;
-		if (m_player->turn == 1)
-		{
-			m_player->turn = -1;
-		}
-		else if (m_player->turn == -1)
-		{
-			m_player->turn = 1;
-		}
-		m_game->ResetTimer();	//タイマーリセット
+
+			Koushin = 0;
+			m_player->SousaFlag = 1;
+			if (m_player->turn == 1)
+			{
+				m_player->turn = -1;
+			}
+			else if (m_player->turn == -1)
+			{
+				m_player->turn = 1;
+			}
+			m_game->ResetTimer();	//タイマーリセット
+			
+		
+		
 	}
 }
 void Board::Render(CRenderContext& rc)

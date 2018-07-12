@@ -7,6 +7,8 @@ public:
 	bool Start() override;
 	void Update() override;
 	void PostRender(CRenderContext& rc) override;
+	
+
 	void StartFadeIn()
 	{
 		m_state = enState_FadeIn;
@@ -20,6 +22,14 @@ public:
 	{
 		return m_state != enState_Idle;
 	}
+
+	bool IsFade2() const {
+		return m_state == enState_Idle2;
+	}
+	bool FadeState()  {
+		 return m_state = enState_Idle2;
+	}
+	
 	float GetCurrentAlpha() const
 	{
 		return m_currentAlpha;
@@ -32,6 +42,7 @@ private:
 	{
 		enState_FadeIn,		//フェードイン中
 		enState_FadeOut,	//フェードアウト中
+		enState_Idle2,
 		enState_Idle,		//どっちでもない
 	};
 	Enstate m_state = enState_Idle;	//現在のフェードの状態。
@@ -41,5 +52,6 @@ private:
 	CSprite m_sprite;
 	int time = 0;
 	float m_currentAlpha = 1.0f;
+
 };
 
