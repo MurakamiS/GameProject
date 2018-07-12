@@ -29,11 +29,13 @@ bool victory::Start()
 	m_animClips[enAnimationClip_vict].SetLoopFlag(true);
 
 	if (m_player->turn == 1) {
+		turn = 1;
 		m_SkinModelRender = NewGO<prefab::CSkinModelRender>(0, "solB");
 		m_SkinModelRender->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
 		m_texture.CreateFromDDSTextureFromFile(L"sprite/1Pvic.dds");
 	}
 	if (m_player->turn == -1) {
+		turn = -1;
 		m_SkinModelRender = NewGO<prefab::CSkinModelRender>(0, "solW");
 		m_SkinModelRender->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
 		m_texture.CreateFromDDSTextureFromFile(L"sprite/2Pvic.dds");
@@ -52,22 +54,14 @@ bool victory::Start()
 void victory::Update() {
 	//Â‚ÌŸ‚¿
 	time++;
-	if (time >= 60&&m_player->turn==1) {
+	if (time >= 60&&m_player->turn==turn) {
 		m_currentAlpha -= 2.0f * GameTime().GetFrameDeltaTime();
 		if (m_currentAlpha <= 0.0f) {
 			m_currentAlpha = 0.0f;
 			time = 0;
 		}
 	}
-	//”’‚ÌŸ‚¿
-	if (time >= 60 && m_player->turn == -1) {
-		m_currentAlpha2 -= 2.0f * GameTime().GetFrameDeltaTime();
-		if (m_currentAlpha2 <= 0.0f) {
-			m_currentAlpha2 = 0.0f;
-			time = 0;
-		}
-	}
-
+	
 	if (Pad(0).IsTrigger(enButtonStart)&&m_fade->IsFade2() ) {
 		m_fade->StartFadeOut();
 	}
@@ -87,7 +81,6 @@ void victory::Update() {
 }
 void victory::PostRender(CRenderContext& rc)
 {
-
 	//Â‚ÌŸ‚¿
 	if (m_player->turn==1||m_player->turn==-1) {
 		m_sprite.SetMulColor({ 1.0f, 1.0f, 1.0f, m_currentAlpha });

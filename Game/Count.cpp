@@ -74,33 +74,29 @@ void Count::Update() {
 			Banmen[a + 1][b + 2] += ten1;
 		}
 
-	/*	for (int s = 0; s < 10; s++) {
-			for (int t = 0; t < 10; t++) {
-				if (Banmen[s][t] == 2)
-					Banmen[s][t] = 1;
+			for (int s = 0; s < 10; s++) {
+				for (int t = 0; t < 10; t++) {
+					if (Banmen[s][t] == 2)
+						Banmen[s][t] = 1;
 
-				if (Banmen[s][t] == 4 || 6)
-					Banmen[s][t] = 5;
+					if (Banmen[s][t] == (4 || 6))
+						Banmen[s][t] = 5;
 
-				if (Banmen[s][t] == -2)
-					Banmen[s][t] = -1;
+					if (Banmen[s][t] == -2)
+						Banmen[s][t] = -1;
 
-				if (Banmen[s][t] == -4 || -6)
-					Banmen[s][t] = -5;
+					if (Banmen[s][t] == (-4 || -6))
+						Banmen[s][t] = -5;
+				}
 			}
-		}*/
-		 BanmenGoukei = Banmen[a + 1][b] + Banmen[a][b + 1] + Banmen[a + 1][b + 2] + Banmen[a + 2][b + 1];
-		if (BanmenGoukei == (2 || -2)) {
-			//if(Banmen[a+1][b+1]==(5||-5)){
+		BanmenGoukei = Banmen[a + 1][b] + Banmen[a][b + 1] + Banmen[a + 1][b + 2] + Banmen[a + 2][b + 1];
+		if (BanmenGoukei == -2) {
 			NewGO<Animation2>(0, "animation2");
-
 			BanmenGoukei = 0;
-
-		//   ||  ←これ使った時だけNewGOされる。
-		//if (Banmen[a][b] == ten2) {
-		////	↓コメントアウトしたらNewGOされないからここでしか呼び出してない。
-		//	NewGO<Animation2>(0, "animation2");
-		//}
+		}
+		if (BanmenGoukei == 2) {
+			NewGO<Animation2>(0, "animation2");
+			BanmenGoukei = 0;
 		}
 	}
 }

@@ -4,6 +4,7 @@
 #include "GameCamera.h";
 #include "Board.h";
 #include "TurnSprite.h"
+#include "Fade.h"
 Animation2::Animation2()
 {
 }
@@ -71,6 +72,8 @@ bool Animation2::Start()
 	m_turnsp = FindGO<TurnSprite>("turnsp");
 	m_board = FindGO<Board>("board");
 	m_board->Animflag = 1;
+	m_fade=FindGO<Fade>("fade");
+	m_fade->FadeState();
 	return true;
 }
 
@@ -81,6 +84,10 @@ void Animation2::Update()
 	m_pos1.y = m_flame * 50.0f;
 	if (m_pos1.y <= 0.0f) {
 		m_pos1.y = 0.0f;
+	}
+
+	if (Pad(0).IsTrigger(enButtonStart) && m_fade->IsFade2()) {
+		m_fade->StartFadeOut();
 	}
 
 	m_SkinModelRender3->SetPosition(m_pos1);

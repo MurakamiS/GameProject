@@ -30,13 +30,13 @@ private:
 	Player* m_player = nullptr;
 	//	CQuaternion rot = CQuaternion::Identity;
 
-	enum Enstate
-	{
-		enState_FadeIn,		//フェードイン中
-		enState_FadeOut,	//フェードアウト中
-		enState_Idle,		//どっちでもない
-	};
-	Enstate m_state = enState_Idle;	//現在のフェードの状態。
+	//enum Enstate
+	//{
+	//	enState_FadeIn,		//フェードイン中
+	//	enState_FadeOut,	//フェードアウト中
+	//	enState_Idle,		//どっちでもない
+	//};
+	//Enstate m_state = enState_Idle;	//現在のフェードの状態。
 
 	enum state
 	{
@@ -69,7 +69,7 @@ private:
 	int count = 0;
 	CFont m_fontTest;
 	float m_timer = 0.0f;
-
+	int turn = 0;
 	CShaderResourceView m_texture1;
 	CSprite m_sprite1;
 };
