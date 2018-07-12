@@ -211,7 +211,9 @@
     <CustomBuild Include="Assets\effect\Wbatsu.efk" />
     <CustomBuild Include="Assets\animation\victory.tka" />
     <CustomBuild Include="Assets\animation\battle.tka" />
-    <CustomBuild Include="Assets\animation\diffence.tka" />　　　　　　　　　　　　　　　　　　　　　
+    <CustomBuild Include="Assets\animation\diffence.tka" />
+    <CustomBuild Include="Assets\effect\a.efk" />
+    <CustomBuild Include="Assets\effect\white.efk" />　　　　　　　　　　　　　　　　　　　　　
   </ItemGroup>
   <ItemGroup>
     <ImageContentTask Include="Assets\sprite\title.png" />
@@ -231,5 +233,8 @@
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\effect\blue.efk" />
   </ItemGroup>
 </Project>

@@ -90,7 +90,8 @@ void Count::Update() {
 			}
 		}*/
 		 BanmenGoukei = Banmen[a + 1][b] + Banmen[a][b + 1] + Banmen[a + 1][b + 2] + Banmen[a + 2][b + 1];
-		if (BanmenGoukei == (2 || -2)) {
+		// if (BanmenGoukei == (2 || -2))この書き方だと2||-2多分常に1になって望んでいる結果にはならないBanmenGoukei==1って書いているのと一緒　
+		if (BanmenGoukei == 2||BanmenGoukei==-2) {
 			//if(Banmen[a+1][b+1]==(5||-5)){
 			NewGO<Animation2>(0, "animation2");
 
@@ -104,3 +105,23 @@ void Count::Update() {
 		}
 	}
 }
+//////////////////////////////////
+//これでうごくならむりにかえんでいいとおもうけどBanmen大きくするんじゃなくて関数つくればいいんすよ例えば
+
+void SetMap(int a, int b,int c)//aとbが座標,cが点数
+{
+	Banmen[a][b] += c;
+}
+//↑こんな感じのやつをヘッダーにつくっといて
+SetMap(a, b, 5);//おいたところ
+if (b > 0)SetMap(a, b - 1, 0);//↑
+if (b < 7)SetMap(a, b + 1, 1);//↓
+if (a > 0)SetMap(a - 1, b, 2);//←
+if (a < 7)SetMap(a + 1, b, 3);//→
+//cppにこんな感じにかく
+//ボードからコピペしただけだからこれでは動かんけどこの書き方が一番単純に端っこの面倒な奴解決してくれるはず　例えばif (b > 0)のやつは一番上の列にいたら
+//動作しませんほかのやつも矢印の方向にマスがなかったら動作しない
+//Boardの配置するやつみたらだいたいわかるはず　あれswitchだからめんどそうだけどどっちのたーんかみてるだけだから
+
+//bool型の混用のやつは(2||-2)←これがbool型になってるのが問題 https://msdn.microsoft.com/ja-jp/library/f355wky8.aspx 
+//動作確認してませんがんばれ　この辺コメントアウトしろ

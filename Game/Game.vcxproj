@@ -839,6 +839,15 @@
       <FileType>Document</FileType>
     </CustomBuild>
   </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Assets\effect\a.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <None Include="Assets\effect\blue.efk" />
+    <CustomBuild Include="Assets\effect\white.efk">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VCTargetsPath)\BuildCustomizations\ImageContentTask.targets" />
