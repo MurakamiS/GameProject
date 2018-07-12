@@ -69,6 +69,10 @@ void Animation::Update()
 {
 	
 	count++;
+	if (count > 60)
+	{
+		
+	}
 }
 void Animation::setRotA(int p,CQuaternion* CQ)//置いたほう pは配置した石からみてどの方向のマスが反応したか　0123で上下左右の順番
 {
