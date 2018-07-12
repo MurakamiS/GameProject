@@ -1,6 +1,7 @@
 #pragma once
 #include "tkEngine/graphics/effect/tkEffect.h"
 #include "Player.h"
+
 class Game;
 class Board;
 class Enshutsu : public IGameObject
@@ -9,7 +10,6 @@ public:
 
 	bool Start() override;
 	void Update() override;
-	void PostRender(CRenderContext& rc);
 private:
 	Player * m_player = nullptr;
 	Board* m_board = nullptr;

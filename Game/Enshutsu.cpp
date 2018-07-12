@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Enshutsu.h"
-#include "Game.h"
-#include "Stone.h"
+#include "Board.h";
+
 #include "Player.h"
-#include "Board.h"
+
 
 bool Enshutsu::Start()
 {
@@ -14,73 +14,21 @@ bool Enshutsu::Start()
 	m_player = FindGO<Player>("Player");
 	prefab::CSoundSource* ss;
 	ss = NewGO<prefab::CSoundSource>(0);
-	ss->Init("sound/zangeki.wav");	
+	ss->Init("sound/zangeki.wav");
 	ss->Play(false);
 
-
-
-
-	if (m_board->Koushin == 0 && m_player->turn == 1) 
+	if (m_board->Koushin == 0 && m_player->turn == 1)
 	{
-		if (m_player->cursorX!=0&& m_player->cursorX !=7&& m_player->cursorY !=0&& m_player->cursorY !=7 ) {
+		if (m_player->cursorX == 0) {
+			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos1{ 110.0f,1.0f,25.0f };
+			CVector3 emitPos1{ -110.0f,1.0f,0.0f };
 			emitPos1 += m_player->m_position;
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/a.efk");
-
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos2{ -110.0f,1.0f,25.0f };
-			emitPos2 += m_player->m_position;
-			effect->SetPosition(emitPos2);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/a.efk");
-
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos3{ 0.0f,1.0f,110.0f };
-			emitPos3 += m_player->m_position;
-			effect->SetPosition(emitPos3);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/a.efk");
-
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos4{ 0.0f,1.0f,-90.0f };
-			emitPos4 += m_player->m_position;
-			effect->SetPosition(emitPos4);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/a.efk");
-		
 		}
-		if (m_player->cursorX == 0) {
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos3{ -110.0f,1.0f,0.0f };
-			emitPos3 += m_player->m_position;
-			effect->SetPosition(emitPos3);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/a.efk");
-			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos1{ 0.0f,1.0f,110.0f };
-				emitPos1 += m_player->m_position;
-				effect->SetPosition(emitPos1);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
 
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,-110.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-			}
-		}
 		if (m_player->cursorX == 7) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
@@ -89,25 +37,8 @@ bool Enshutsu::Start()
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/a.efk");
-
-			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,110.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 0.0f,1.0f,-110.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-			}
 		}
+
 		if (m_player->cursorY == 0) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
@@ -116,25 +47,8 @@ bool Enshutsu::Start()
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/a.efk");
-
-			if (m_player->cursorX != 0 && m_player->cursorX != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ -110.0f,1.0f,0.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 110.0f,1.0f,0.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-			}
 		}
+
 		if (m_player->cursorY == 7) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
@@ -143,44 +57,105 @@ bool Enshutsu::Start()
 			effect->SetPosition(emitPos1);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/a.efk");
-
-			if (m_player->cursorX != 0 && m_player->cursorX != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ -110.0f,1.0f,0.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 110.0f,1.0f,0.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/a.efk");
-			}
 		}
 
-	}
-	if (m_board->Koushin == 0 && m_player->turn == -1) {
-		if (m_player->cursorX != 0 && m_player->cursorX != 7 && m_player->cursorY != 0 && m_player->cursorY != 7) {
+		if (m_player->cursorX > 0 && m_player->cursorX < 7) {
+			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos1{ 110.0f,1.0f,20.0f };
+			CVector3 emitPos3{ -110.0f,1.0f,0.0f };
+			emitPos3 += m_player->m_position;
+			effect->SetPosition(emitPos3);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos1{ 110.0f,1.0f,0.0f };
 			emitPos1 += m_player->m_position;
 			effect->SetPosition(emitPos1);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+		}
+
+		if (m_player->cursorY > 0 && m_player->cursorY < 7) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos3{ 0.0f,1.0f,110.0f };
+			emitPos3 += m_player->m_position;
+			effect->SetPosition(emitPos3);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos2{ 0.0f,1.0f,-110.0f };
+			emitPos2 += m_player->m_position;
+			effect->SetPosition(emitPos2);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/a.efk");
+		}
+	}
+	if (m_board->Koushin == 0 && m_player->turn == -1)
+	{
+		if (m_player->cursorX == 0) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos1{ -110.0f,1.0f,0.0f };
+			emitPos1 += m_player->m_position;
+			effect->SetPosition(emitPos1);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/Wbatsu.efk");
+		}
+		
+		if (m_player->cursorX == 7) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos1{ 110.0f,1.0f,0.0f };
+			emitPos1 += m_player->m_position;
+			effect->SetPosition(emitPos1);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/Wbatsu.efk");
+		}
+
+		if (m_player->cursorY == 0) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos2{ 0.0f,1.0f,110.0f };
+			emitPos2 += m_player->m_position;
+			effect->SetPosition(emitPos2);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/Wbatsu.efk");
+		}
+
+		if (m_player->cursorY == 7) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos2{ 0.0f,1.0f,-110.0f };
+			emitPos2 += m_player->m_position;
+			effect->SetPosition(emitPos2);
+			effect->SetRotation(rot);
+			effect->Play(L"effect/Wbatsu.efk");
+		}
+
+		if (m_player->cursorX > 0 && m_player->cursorX < 7) {
+			effect = NewGO<prefab::CEffect>(0);
+			effect->SetScale(scale);
+			CVector3 emitPos3{ -110.0f,1.0f,0.0f };
+			emitPos3 += m_player->m_position;
+			effect->SetPosition(emitPos3);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/Wbatsu.efk");
 
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos2{ -110.0f,1.0f,20.0f };
-			emitPos2 += m_player->m_position;
-			effect->SetPosition(emitPos2);
+			CVector3 emitPos4{ 110.0f,1.0f,0.0f };
+			emitPos4 += m_player->m_position;
+			effect->SetPosition(emitPos4);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/Wbatsu.efk");
+		}
 
+		if (m_player->cursorY > 0 && m_player->cursorY < 7) {
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
 			CVector3 emitPos3{ 0.0f,1.0f,110.0f };
@@ -191,122 +166,14 @@ bool Enshutsu::Start()
 
 			effect = NewGO<prefab::CEffect>(0);
 			effect->SetScale(scale);
-			CVector3 emitPos4{ 0.0f,1.0f,-85.0f };
-			emitPos4+= m_player->m_position;
+			CVector3 emitPos4{ 0.0f,1.0f,-110.0f };
+			emitPos4 += m_player->m_position;
 			effect->SetPosition(emitPos4);
 			effect->SetRotation(rot);
 			effect->Play(L"effect/Wbatsu.efk");
 		}
-		if (m_player->cursorX == 0) {
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos3{ -110.0f,1.0f,10.0f };
-			emitPos3 += m_player->m_position;
-			effect->SetPosition(emitPos3);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/Wbatsu.efk");
-			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos1{ 0.0f,1.0f,120.0f };
-				emitPos1 += m_player->m_position;
-				effect->SetPosition(emitPos1);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,-100.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-			}
-		}
-		if (m_player->cursorX == 7) {
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos1{ 110.0f,1.0f,10.0f };
-			emitPos1 += m_player->m_position;
-			effect->SetPosition(emitPos1);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/Wbatsu.efk");
-
-			if (m_player->cursorY != 0 && m_player->cursorY != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ 0.0f,1.0f,125.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 0.0f,1.0f,-90.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-			}
-		}
-		if (m_player->cursorY == 0) {
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos1{ 0.0f,1.0f,130.0f };
-			emitPos1 += m_player->m_position;
-			effect->SetPosition(emitPos1);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/Wbatsu.efk");
-
-			if (m_player->cursorX != 0 && m_player->cursorX != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ -110.0f,1.0f,20.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 110.0f,1.0f,20.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-			}
-		}
-		if (m_player->cursorY == 7) {
-			effect = NewGO<prefab::CEffect>(0);
-			effect->SetScale(scale);
-			CVector3 emitPos1{ 0.0f,1.0f,-110.0f };
-			emitPos1 += m_player->m_position;
-			effect->SetPosition(emitPos1);
-			effect->SetRotation(rot);
-			effect->Play(L"effect/Wbatsu.efk");
-
-			if (m_player->cursorX != 0 && m_player->cursorX != 7) {
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos2{ -110.0f,1.0f,0.0f };
-				emitPos2 += m_player->m_position;
-				effect->SetPosition(emitPos2);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-
-				effect = NewGO<prefab::CEffect>(0);
-				effect->SetScale(scale);
-				CVector3 emitPos3{ 110.0f,1.0f,0.0f };
-				emitPos3 += m_player->m_position;
-				effect->SetPosition(emitPos3);
-				effect->SetRotation(rot);
-				effect->Play(L"effect/Wbatsu.efk");
-			}
-		}
-
 	}
-	return true;
+		return true;
 }
 void Enshutsu :: Update()
 {	
@@ -318,7 +185,4 @@ void Enshutsu :: Update()
 		ss->Play(false);
 		DeleteGO(this);
 	}
-}
-void Enshutsu::PostRender(CRenderContext& rc) {
-
 }

@@ -1,11 +1,12 @@
 #include "stdafx.h"
 #include "Game.h"
 #include "Stone.h"
-#include "TurnSprite.h"
-#include "Enshutsu.h"
+
+#include "TurnSprite.h";
 #include "Background.h"
 #include "Player.h"
 #include "Animation.h"
+
 Game::Game()
 {
 }
@@ -36,7 +37,9 @@ bool Game::Start()
 
 //ゲームプレイに必要なクラスのインスタンスを生成。
 	NewGO<Board>(0, "board");
+	
 	NewGO<Background>(0, "Back");
+//	NewGO<Count>(0, "count");
 	m_board = FindGO<Board>("board");
 	//プレイヤークラスインスタンス作る
 	//フェードインの処理。k

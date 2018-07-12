@@ -2,7 +2,6 @@
 
 
 class Player;
-class Game;
 class Board;
 class TurnSprite:public IGameObject
 {
@@ -33,8 +32,7 @@ private:
 	CSprite m_sprite1;
 	CShaderResourceView m_texture2;
 	CSprite m_sprite2;
-	Animation* m_animation;
 	Player* m_player;
-	Game* m_game;
+
 };
 

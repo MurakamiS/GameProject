@@ -47,6 +47,8 @@
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="victory.cpp" />
     <ClCompile Include="VictTet.cpp" />
+    <ClCompile Include="Count.cpp" />
+    <ClCompile Include="Animation2.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CLInclude Include="resource.h">
@@ -67,6 +69,8 @@
     <ClInclude Include="Background.h" />
     <ClInclude Include="victory.h" />
     <ClInclude Include="VictTet.h" />
+    <ClInclude Include="Count.h" />
+    <ClInclude Include="Animation2.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -220,12 +224,12 @@
     <ImageContentTask Include="Assets\sprite\2Pturn.png" />
     <ImageContentTask Include="Assets\sprite\1Pvic.png" />
     <ImageContentTask Include="Assets\sprite\2Pvic.png" />
+    <ImageContentTask Include="Assets\sprite\button.png" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_modelData_utc__all2.tga.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkari2.png.dds" />
     <Image Include="Resource\_Users_kbc17b10_Documents_GameProject_Game_Assets_sprite_texkarinaka.png.dds" />
-    <Image Include="Assets\sprite\button.png" />
   </ItemGroup>
 </Project>

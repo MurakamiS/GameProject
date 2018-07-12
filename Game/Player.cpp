@@ -5,8 +5,8 @@
 #include "Game.h"
 #include "Enshutsu.h"
 #include "TurnSprite.h"
-#include "victory.h"
-#include "VictTet.h"
+#include "Count.h"
+
 Player::Player()
 {
 }
@@ -22,9 +22,10 @@ bool Player::Start()
 	m_skinModelRender->SetScale({ 1.0f, 1.0f, 1.0f });
 	m_skinModelRender->SetPosition({ 0.0f,50.0f,0.0f });
 	m_board = FindGO<Board>("board");
+	
 	m_game = FindGO<Game>("Game");
 	NewGO<TurnSprite>(0, "turnsp");
-	
+	NewGO<Count>(0, "count");
 	return true;
 }
 void Player::Update()
@@ -66,6 +67,7 @@ void Player::Update()
 				NewGO<Stone>(0, nullptr);
 				m_board->Haichi = 1;
 				NewGO<Enshutsu>(0, "enshutsu");
+				
 			}
 		}
 	}
@@ -102,6 +104,7 @@ void Player::Update()
 				SousaFlag = 0;
 				m_board->Haichi = 1;
 				NewGO<Enshutsu>(0, "enshutsu");
+			
 			}
 		}
 		}

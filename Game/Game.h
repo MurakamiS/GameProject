@@ -1,12 +1,10 @@
 #pragma once
 #include "Fade.h"
-#include "tkEngine/graphics/effect/tkEffect.h"
+
 #include "Title.h"
 #include "Board.h"
-#include "TurnSprite.h"
-#include "Enshutsu.h"
-#include "tkEngine/graphics/font/tkFont.h"
 
+#include "tkEngine/graphics/font/tkFont.h"
 
 class Board;
 class Stone;
@@ -23,7 +21,7 @@ public:
 	void OnDestroy();
 	void ResetTimer()
 	{
-		m_timer = 99.0f;
+		m_timer = 30.0f;
 	}
 	//prefab::CEffect* m_effect = nullptr;					//エフェクト
 
@@ -40,9 +38,10 @@ private:
 	Board* m_board = nullptr;
 	Stone* m_stone = nullptr;
 	Player* m_player = nullptr;
-	TurnSprite* m_turnsp = nullptr;
-	Enshutsu* m_enshutsu = nullptr;
+	
+
 	Animation* m_animation = nullptr;
+	
 	CFont m_fontTest;
 	float m_timer = 30.0f;								//!<タイマー
 	//std::unique_ptr<DirectX::SpriteFont> m_timerFont;	//!<タイマー用のフォント。

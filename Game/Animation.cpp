@@ -2,13 +2,12 @@
 #include "Animation.h"
 #include "Player.h"
 #include "Board.h"
-#include "GameCamera.h"
-#include "Fade.h"
-#include  "Title.h"
-#include "TurnSprite.h"
+
 Animation::Animation()
 {
 }
+
+
 Animation::~Animation()
 {
 }
@@ -16,89 +15,97 @@ bool Animation::Start()
 {
 	m_player = FindGO<Player>("Player");
 	m_board = FindGO<Board>("board");
-	MainCamera().SetTarget({ 1000.0f, 0.0f, 400.0f });
-	MainCamera().SetNear(0.1f);
-	MainCamera().SetFar(5000.0f);
-	MainCamera().SetPosition({ 900.0f, 100.0f, 250.0f });
-
+	turn = m_player->turn;
 	//アニメーションクリップのロード
 	m_animClips[enAnimationClip_idle].Load(L"animation/solidle.tka");
-	m_animClips[enAnimationClip_battle].Load(L"animation/battle.tka");
-	m_animClips[enAnimationClip_diffence].Load(L"animation/diffence.tka");
+	m_animClips[enAnimationClip_Walk].Load(L"animation/solwalk.tka");
+	m_animClips[enAnimationClip_Run].Load(L"animation/solrun.tka");
+	m_animClips[enAnimationClip_Attack].Load(L"animation/solattack.tka");
 	m_animClips[enAnimationClip_idle].SetLoopFlag(true);
-	
+	m_animClips[enAnimationClip_Walk].SetLoopFlag(true);
+	m_animClips[enAnimationClip_Run].SetLoopFlag(true);
 	//このへんでどのアニメーションを再生するか呼び出し元から持ってくる いまはいい
-	
-	m_animClips[enAnimationClip_battle].SetLoopFlag(true);
-	m_animClips[enAnimationClip_diffence].SetLoopFlag(true);
-
-	
-
-	if (m_player->turn == -1) {
-		m_SkinModelRender1 = NewGO<prefab::CSkinModelRender>(0, "solB1");
-		m_SkinModelRender1->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
+	m_whitePos = m_player->m_skinModelRender->GetPosition();
+	//兵士の位置とか調整するために座標の情報をちゃんともってこないといけない
+	m_bluePos = m_player->m_skinModelRender->GetPosition();
+	//スキンモデルレンダラーを作成
+	m_SkinModelRenderB = NewGO<prefab::CSkinModelRender>(0, "solB");
+	m_SkinModelRenderW = NewGO<prefab::CSkinModelRender>(0, "solW");
+	m_SkinModelRenderB->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
+	m_SkinModelRenderW->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
+	m_SkinModelRenderB->PlayAnimation(enAnimationClip_idle);
+	m_SkinModelRenderW->PlayAnimation(enAnimationClip_idle);
+	// BanX*-110.0f,50.0f,BanY*110.0fでたぶんなんとかなる 
+	//どっちのターン時によばれたかturnに入ってるのでそれによって分岐　ここかきなおせ1白-1青
+	BBan = m_board->GetMapB(turn);
+	WBan = m_board->GetMapW(turn);
+	/*m_board->GetBanX();
+	m_board->GetBanY();*/
+	m_whitePos = transPos(WBan);
+	m_bluePos = transPos(BBan);
+	m_SkinModelRenderB->SetPosition(m_bluePos);
+	m_SkinModelRenderW->SetPosition(m_whitePos);
+	//ここでRotationの調整
+	sPos = m_board->GetstonePos();
+	switch (turn)
+	{
+	case 1:
+		setRotA(sPos, &m_whiteRot);
+		setRotB(sPos, &m_blueRot);
+		break;
+	case -1:
+		setRotA(sPos, &m_blueRot);
+		setRotB(sPos, &m_whiteRot);
+		break;
+	default:
+		break;
 	}
-	if (m_player->turn == 1) {
-		m_SkinModelRender1 = NewGO<prefab::CSkinModelRender>(0, "solW1");
-		m_SkinModelRender1->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
-	}
-	m_SkinModelRender1->PlayAnimation(enAnimationClip_idle);
-	rot.SetRotation(CVector3::AxisY, 3.0f);
-	m_SkinModelRender1->SetRotation(rot);
-	m_SkinModelRender1->SetPosition(m_pos3);
 
-	if (m_player->turn == -1) {
-		m_SkinModelRender2 = NewGO<prefab::CSkinModelRender>(0, "solW2");
-		m_SkinModelRender2->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
-	}
-	if (m_player->turn == 1) {
-		m_SkinModelRender2 = NewGO<prefab::CSkinModelRender>(0, "solB2");
-		m_SkinModelRender2->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
-	}
+	m_SkinModelRenderB->SetRotation(m_blueRot);
+	m_SkinModelRenderW->SetRotation(m_whiteRot);
 
-	m_SkinModelRender2->PlayAnimation(enAnimationClip_diffence);
-	m_animClips[enAnimationClip_diffence].SetLoopFlag(false);
-	m_SkinModelRender2->SetPosition(m_pos2);
-
-	if (m_player->turn == -1) {
-		m_SkinModelRender3 = NewGO<prefab::CSkinModelRender>(0, "solB3");
-		m_SkinModelRender3->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
-	}
-
-	if (m_player->turn == 1) {
-		m_SkinModelRender3 = NewGO<prefab::CSkinModelRender>(0, "solW3");
-		m_SkinModelRender3->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
-	}
-	m_SkinModelRender3->PlayAnimation(enAnimationClip_battle);
-	m_animClips[enAnimationClip_battle].SetLoopFlag(false);
-	m_SkinModelRender3->SetPosition(m_pos1);
-	
-	m_turnsp = FindGO<TurnSprite>("turnsp");
-	m_title = FindGO<Title>("title");
-	m_fade = FindGO<Fade>("fade");
-	m_board = FindGO<Board>("board");
-	m_board->Animflag = 1;
 	return true;
 }
-
 void Animation::Update()
 {
-	m_flame--;
-	m_pos1.y = m_flame * 50.0f;
-	if (m_pos1.y <= 0.0f) {
-		m_pos1.y = 0.0f;
-	}
-	
-	m_SkinModelRender3->SetPosition(m_pos1);
-	if (m_flame == -50) {
-		
-		DeleteGO(m_SkinModelRender1);
-		DeleteGO(m_SkinModelRender2);
-		DeleteGO(m_SkinModelRender3);
-		NewGO<GameCamera>(0, "gamecamera");
-		m_board->Animflag = 0;
-		m_turnsp->time = 0;
-		DeleteGO(this);
-	}
+
 	count++;
+}
+void Animation::setRotA(int p, CQuaternion* CQ)//置いたほう pは配置した石からみてどの方向のマスが反応したか　0123で上下左右の順番
+{
+	switch (p)
+	{
+	case 0:
+		CQ->SetRotationDeg(CVector3::AxisY, 180.0f);
+		break;
+	case 1:
+		break;
+	case 2:
+		CQ->SetRotationDeg(CVector3::AxisY, 90.0f);
+		break;
+	case 3:
+		CQ->SetRotationDeg(CVector3::AxisY, 270.0f);
+		break;
+	default:
+		break;
+	}
+}
+void Animation::setRotB(int p, CQuaternion* cq)//おかれたほう
+{
+	switch (p)
+	{
+	case 0:
+		break;
+	case 1:
+		cq->SetRotationDeg(CVector3::AxisY, 180.0f);
+		break;
+	case 2:
+		cq->SetRotationDeg(CVector3::AxisY, 270.0f);
+		break;
+	case 3:
+		cq->SetRotationDeg(CVector3::AxisY, 90.0f);
+		break;
+	default:
+		break;
+	}
 }

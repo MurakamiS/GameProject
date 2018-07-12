@@ -620,8 +620,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="Animation2.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="Board.cpp" />
+    <ClCompile Include="Count.cpp" />
     <ClCompile Include="Enshutsu.cpp" />
     <ClCompile Include="Fade.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -645,8 +647,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Animation.h" />
+    <ClInclude Include="Animation2.h" />
     <ClInclude Include="Background.h" />
     <ClInclude Include="Board.h" />
+    <ClInclude Include="Count.h" />
     <ClInclude Include="Enshutsu.h" />
     <ClInclude Include="Fade.h" />
     <ClInclude Include="GameCamera.h" />

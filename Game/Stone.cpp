@@ -21,7 +21,7 @@ bool Stone::Start()
 	{
 	case 1:
 		m_skinModelData.Load(L"modelData/whitekari.cmo");
-		break;
+		//break;
 	case -1:
 		m_skinModelData.Load(L"modelData/bluekari.cmo");
 		break;
