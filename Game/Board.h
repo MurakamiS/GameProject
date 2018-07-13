@@ -38,45 +38,43 @@ public:
 	{
 		return stonePos;
 	}
-	////上下左右に応じた座標を返す
-	//CInt2 GetPos(int c)
-	//{
-	//	CInt2 re;
-	//	switch (c)
-	//	{
-	//	case 0:
-	//		re.X = BanX;
-	//		re.Y = BanY - 1;
-	//		break;
-	//	case 1:
+	////上下左右に応じた座標を返す										/////////////////////////////////////
+/*	CInt2 GetPos(int c)
+	{
+		CInt2 re;
+		switch (c)
+		{
+		case 0:
+			re.X = BanX;
+			re.Y = BanY - 1;
+			break;
+		case 1:
 
-	//		re.X = BanX;
-	//		re.Y = BanY + 1;
-	//		break;
-	//	case 2:
+			re.X = BanX;
+			re.Y = BanY + 1;
+			break;
+		case 2:
 
-	//		re.X = BanX-1;
-	//		re.Y = BanY;
-	//		break;
-	//	case 3:
+			re.X = BanX-1;
+			re.Y = BanY;
+			break;
+		case 3:
 
-	//		re.X = BanX+1;
-	//		re.Y = BanY;
-	//		break;
-	//	}
-	//	return re;
-	//}
+			re.X = BanX+1;
+			re.Y = BanY;
+			break;
+		}
+		return re;
+	}						*/						///////////////////////////////////////
 	//白のざひょう tが1の時が白、－１のときが青 -1のときのBanXBanYの値は
 	CInt2 GetMapW(int t);
 	CInt2 GetMapB(int t);
-
-private:
-
+	
 	//残りターン数。残コマ数表示の時はこれ使う。
-	int turnA = 10;	//青
-	int turnB = 10;	//白
-
-					//Animationにもっていく座標
+	int turnA = 2;	//青
+	int turnB = 2;	//白
+private:
+	//Animationにもっていく座標
 	int BanX;
 	int BanY;
 	int stonePos;//Animationを呼び出したとき配置した石からみてどの方向のマスか　0123で上下左右の順番

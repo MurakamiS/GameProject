@@ -25,7 +25,7 @@ bool TurnSprite::Start()
 void TurnSprite::Update()
 {
 	time++;
-	if (m_board->Koushin == 0 && m_player->turn == 1 && m_board->Animflag == 0) {
+	if (m_board->Koushin == 0 && m_player->turn == 1 && m_board->Animflag == 0&&  m_board->turnA != 0 &&m_board->turnB != 0) {
 
 		if (time >= 45) {
 			m_currentAlpha1 -= 2.0f * GameTime().GetFrameDeltaTime();
@@ -54,7 +54,7 @@ void TurnSprite::Update()
 			}
 		}
 	}
-	if (m_board->Koushin == 0 && m_player->turn == -1 && m_board->Animflag == 0) {
+	if (m_board->Koushin == 0 && m_player->turn == -1 && m_board->Animflag == 0&& m_board->turnA != 0 &&m_board->turnB != 0) {
 		if (time >= 45) {
 			m_currentAlpha2 -= 2.0f * GameTime().GetFrameDeltaTime();
 			if (m_currentAlpha2 <= 0.0f) {
@@ -83,7 +83,6 @@ void TurnSprite::Update()
 		}
 	}
 }
-
 void TurnSprite::PostRender(CRenderContext& rc)
 {
 	if (m_board->Koushin == 0 && m_player->turn == 1&& m_board->Animflag == 0) {

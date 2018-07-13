@@ -1,9 +1,7 @@
 #include "stdafx.h"
 #include "Enshutsu.h"
 #include "Board.h";
-
 #include "Player.h"
-
 
 bool Enshutsu::Start()
 {

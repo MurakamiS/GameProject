@@ -39,9 +39,6 @@ bool Board::Start()
 }
 void Board::Update()
 {
-	//
-
-	//
 	//置いた石の周りの色を更新///////////////////////////////////////////つぎここからやれ
 	if (Haichi == 1)
 	{
@@ -120,9 +117,6 @@ void Board::Update()
 				m_player->turn = 1;
 			}
 			m_game->ResetTimer();	//タイマーリセット
-			
-		
-		
 	}
 }
 void Board::Render(CRenderContext& rc)

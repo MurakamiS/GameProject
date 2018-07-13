@@ -4,6 +4,8 @@ class GameCamera;
 class Board;
 class TurnSprite;
 class Fade;
+class Count;
+
 class Animation2 :public IGameObject
 {
 
@@ -12,12 +14,14 @@ public:
 	~Animation2();
 	bool Start();
 	void Update();
+	void Delete();
 private:
 	Player* m_player = nullptr;
 	Board* m_board = nullptr;
 	TurnSprite* m_turnsp = nullptr;
+
 	Fade* m_fade = nullptr;
-	//GameCamera* m_gamecamera = nullptr;
+	Count* m_count = nullptr;
 	CVector3 m_pos1 = { 1000.0f, 1500.0f, 350.0f };
 	CVector3 m_pos2 = { 1000.0f, 0.0f, 380.0f };
 	CVector3 m_pos3 = { 1000.0f, 0.0f, 480.0f };
@@ -58,5 +62,6 @@ private:
 	//‚±‚ê‚ªˆê’è‚Ì”’l‚É’B‚·‚é‚Æ‚¨‚í‚è
 	int count = 0;
 	int m_flame = 30;
-
+	int flag = 0;
+	int m_flame2 = 0;
 };

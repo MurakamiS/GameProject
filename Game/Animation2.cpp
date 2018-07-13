@@ -1,10 +1,12 @@
 #include "stdafx.h"
 #include "Animation2.h"
 #include "Player.h"
-#include "GameCamera.h";
+#include "GameCamera.h"
 #include "Board.h";
 #include "TurnSprite.h"
 #include "Fade.h"
+#include "Count.h"
+
 Animation2::Animation2()
 {
 }
@@ -26,15 +28,14 @@ bool Animation2::Start()
 	m_animClips[enAnimationClip_idle].SetLoopFlag(true);
 
 	//このへんでどのアニメーションを再生するか呼び出し元から持ってくる いまはいい
-
 	m_animClips[enAnimationClip_battle].SetLoopFlag(true);
 	m_animClips[enAnimationClip_diffence].SetLoopFlag(true);
 
-	if (m_player->turn == -1) {
+	if (m_player->turn == 1) {
 		m_SkinModelRender1 = NewGO<prefab::CSkinModelRender>(0, "solB1");
 		m_SkinModelRender1->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
 	}
-	if (m_player->turn == 1) {
+	if (m_player->turn == -1) {
 		m_SkinModelRender1 = NewGO<prefab::CSkinModelRender>(0, "solW1");
 		m_SkinModelRender1->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
 	}
@@ -43,11 +44,11 @@ bool Animation2::Start()
 	m_SkinModelRender1->SetRotation(rot);
 	m_SkinModelRender1->SetPosition(m_pos3);
 
-	if (m_player->turn == -1) {
+	if (m_player->turn == 1) {
 		m_SkinModelRender2 = NewGO<prefab::CSkinModelRender>(0, "solW2");
 		m_SkinModelRender2->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
 	}
-	if (m_player->turn == 1) {
+	if (m_player->turn == -1) {
 		m_SkinModelRender2 = NewGO<prefab::CSkinModelRender>(0, "solB2");
 		m_SkinModelRender2->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
 	}
@@ -56,12 +57,12 @@ bool Animation2::Start()
 	m_animClips[enAnimationClip_diffence].SetLoopFlag(false);
 	m_SkinModelRender2->SetPosition(m_pos2);
 
-	if (m_player->turn == -1) {
+	if (m_player->turn == 1) {
 		m_SkinModelRender3 = NewGO<prefab::CSkinModelRender>(0, "solB3");
 		m_SkinModelRender3->Init(L"modelData/blueman.cmo", m_animClips, enAnimationClip_Num);
 	}
 
-	if (m_player->turn == 1) {
+	if (m_player->turn == -1) {
 		m_SkinModelRender3 = NewGO<prefab::CSkinModelRender>(0, "solW3");
 		m_SkinModelRender3->Init(L"modelData/whiteman.cmo", m_animClips, enAnimationClip_Num);
 	}
@@ -72,34 +73,34 @@ bool Animation2::Start()
 	m_turnsp = FindGO<TurnSprite>("turnsp");
 	m_board = FindGO<Board>("board");
 	m_board->Animflag = 1;
-	m_fade=FindGO<Fade>("fade");
+	m_fade = FindGO<Fade>("fade");
 	m_fade->FadeState();
+	m_count = FindGO<Count>("count");
 	return true;
 }
-
 void Animation2::Update()
 {
-
 	m_flame--;
 	m_pos1.y = m_flame * 50.0f;
 	if (m_pos1.y <= 0.0f) {
 		m_pos1.y = 0.0f;
 	}
-
-	if (Pad(0).IsTrigger(enButtonStart) && m_fade->IsFade2()) {
-		m_fade->StartFadeOut();
-	}
-
 	m_SkinModelRender3->SetPosition(m_pos1);
-	if (m_flame == -50) {
-
-		DeleteGO(m_SkinModelRender1);
-		DeleteGO(m_SkinModelRender2);
-		DeleteGO(m_SkinModelRender3);
-		NewGO<GameCamera>(0, "gamecamera");
-		m_board->Animflag = 0;
-		m_turnsp->time = 0;
-		DeleteGO(this);
+	if (Pad(0).IsTrigger(enButtonB) || Pad(1).IsTrigger(enButtonB)) {
+		Delete();
 	}
-	count++;
+
+	else if (m_flame == -50) {
+		Delete();
+	}
+}
+void Animation2::Delete() {
+	DeleteGO(m_SkinModelRender1);
+	DeleteGO(m_SkinModelRender2);
+	DeleteGO(m_SkinModelRender3);
+	NewGO<GameCamera>(0, "gamecamera");
+	m_board->Animflag = 0;
+	m_turnsp->time = 0;
+	m_count->count = 0;
+	DeleteGO(this);
 }

@@ -34,6 +34,7 @@ public:
 	{
 		return m_currentAlpha;
 	}
+
 	//ƒƒ“ƒo•Ï”
 
 	

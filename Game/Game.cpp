@@ -6,7 +6,7 @@
 #include "Background.h"
 #include "Player.h"
 #include "Animation.h"
-
+#include "victory.h"
 Game::Game()
 {
 }
@@ -51,29 +51,35 @@ bool Game::Start()
 }
 void Game::Update()
 {
-	//if (m_DeleteFlag && !m_fade->IsFade())
-	//{
-
-	//	NewGO<Title>(0, nullptr);
-	//	DeleteGO(this);
-	//}
-
-	/*if (m_board->turnA==0&&m_board->turnB==0)//お互いがターン使い切った時の処理。数値がおかしくなったら条件の中身を変数にする
+	if (m_DeleteFlag && !m_fade->IsFade())
 	{
-	if(m_board->ScoreA>m_board->ScoreB)
-	{
-	win=1;
+		NewGO<Title>(0, nullptr);
+		DeleteGO(this);
 	}
-	else if(m_board->ScoreA<m_board->ScoreB)
-	{
-	win=-1;
-	}
-	else if(m_board->ScoreA==m_board->ScoreB)
-	{
-	win=0;
-	}
-	*/
 
+	if (m_board->turnA == 0 && m_board->turnB == 0 && count0flag == 0 && m_board->Animflag == 0)//お互いがターン使い切った時の処理。数値がおかしくなったら条件の中身を変数にする
+	{
+		count0flag = 1;
+	}
+	if (count0flag == 1) {
+		m_player->SousaFlag = 0;
+		count2++;
+	}
+	if (count2 == 30)
+		NewGO<victory>(0, "victory");
+
+	/*if (m_board->ScoreA > m_board->ScoreB)
+	{
+		win = 1;
+	}
+	else if (m_board->ScoreA < m_board->ScoreB)
+	{
+		win = -1;
+	}
+	else if (m_board->ScoreA == m_board->ScoreB)
+	{
+		win = 0;
+	}*/
 	m_timer = max(0.0f, m_timer - GameTime().GetFrameDeltaTime()); {
 		if (m_timer == 0) {
 			if (m_player->turn == -1) {
@@ -82,30 +88,30 @@ void Game::Update()
 			else if (m_player->turn == 1) {
 				m_player->turn = -1;
 			}
-			NewGO<TurnSprite>(0, "turnsp");
 			ResetTimer();
-			}
 		}
 	}
-
+}
 void Game::Render(CRenderContext& rc)
 {
 }
 void Game::PostRender(CRenderContext& rc)
 {
-	wchar_t text[256];
-	int sec = (int)m_timer;
-	swprintf_s(text, L"%02d", sec);
-	m_fontTest.Begin(rc);
+	if (count0flag == 0) {
+		wchar_t text[256];
+		int sec = (int)m_timer;
+		swprintf_s(text, L"%02d", sec);
+		m_fontTest.Begin(rc);
 
-	//文字を描画。
-	m_fontTest.Draw(
-		text,
-		{ -300.0f, 300.0f },
-		{ 1.0f, 0.0f, 0.0f, 1.0f },//RGB
-		0.0f,
-		3.0f,
-		{ 0.0f, 1.0f }
-	);
-	m_fontTest.End(rc);
+		//文字を描画。
+		m_fontTest.Draw(
+			text,
+			{ -300.0f, 300.0f },
+			{ 1.0f, 0.0f, 0.0f, 1.0f },//RGB
+			0.0f,
+			3.0f,
+			{ 0.0f, 1.0f }
+		);
+		m_fontTest.End(rc);
+	}
 }

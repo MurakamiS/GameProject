@@ -37,10 +37,9 @@ void VictTet::Update()
 		}
 	}
 	
-	if (Pad(0).IsTrigger(enButtonStart)) {
+	if (Pad(0).IsTrigger(enButtonStart)|| Pad(1).IsTrigger(enButtonStart)) {
 		m_currentAlpha = 0.5f;
 		m_state = enState_idle;
-		
 	}
 	
 	if (m_currentAlpha == 0.0f&&m_state == enState_idle){
